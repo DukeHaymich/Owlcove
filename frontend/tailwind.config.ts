@@ -37,7 +37,7 @@ const config: Config = {
     plugin(function({ addUtilities }) {
       addUtilities({
         '.content-view-box': {
-          maxWidth: '1376px',
+          maxWidth: '1072px',
           paddingInline: '32px',
           marginInline: 'auto',
         }

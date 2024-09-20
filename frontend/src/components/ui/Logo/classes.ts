@@ -7,8 +7,8 @@ export const containerClasses = cva('flex items-center', {
       vertical: 'flex-col-reverse scale-[0.9]',
     },
     size: {
-      small: 'w-[144px]',
-      medium: 'w-[172px]',
+      small: 'w-[121px]',
+      medium: 'w-[144px]',
       large: 'w-[216px]',
     },
   },

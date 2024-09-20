@@ -4,55 +4,36 @@ import Logo from '@/components/ui/Logo';
 import clsx from 'clsx';
 import { useState } from 'react';
 
-interface IMenuHeader {
-  name: string;
-  children: string[];
-}
-
-const menuHeaderData: IMenuHeader[] = [
-  {
-    name: 'Thực đơn',
-    children: ['Bình dân', 'Hàn Quốc', 'Đồ ăn nhanh'],
-  },
-  {
-    name: 'Tin tức',
-    children: ['Ưu đãi', 'Sự kiện'],
-  },
-  {
-    name: 'Home',
-    children: [],
-  },
-  {
-    name: 'Tuyển dụng',
-    children: [],
-  },
-  {
-    name: 'Đặt chỗ',
-    children: [],
-  },
-];
+import { menuHeaderData } from '@/data/header';
 
 export default function Header() {
   const [orientation, setOrientation] = useState<'vertical' | 'horizontal'>('vertical');
   return (
-    <nav className='bg-beige'>
-      <div className='content-view-box flex h-20 w-full flex-row flex-nowrap items-start justify-center'>
+    <nav className='bg-gradient-to-b from-beige from-50% to-beige/50 to-50%'>
+      <div className='absolute left-0 right-0 mx-auto h-10 content-view-box'>
+        {/* For upper row content */}
+      </div>
+      <div className='flex h-20 flex-row flex-nowrap items-end justify-between content-view-box'>
         {menuHeaderData.map((item, index) => {
+          const isLogo = item.name === 'Home';
           return (
             <div
               key={index}
-              className='grow basis-0'>
-              {item.name === 'Home' ? (
-                <div className='max-w-fit translate-y-5 rounded-b-[100%] bg-beige px-5 pb-3'>
+              className={clsx(
+                'flex justify-center',
+                isLogo ? 'self-start' : 'h-10 w-full max-w-[196px] items-center'
+              )}>
+              {isLogo ? (
+                <div className='max-w-fit translate-y-7 rounded-b-[90%] bg-beige px-4 pb-3'>
                   <Logo
                     orientation={orientation}
                     size='medium'
                     animated
-                    className='-translate-y-3'
+                    className='-translate-y-4'
                   />
                 </div>
               ) : (
-                <p className='font-label content text-lg font-medium'>{item.name}</p>
+                <p className='text-nowrap font-main font-bold text-primary'>{item.name}</p>
               )}
             </div>
           );
