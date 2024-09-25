@@ -5,6 +5,7 @@ import logoHorizontalPath from '../../../public/images/logo-horizontal.png';
 import logoVerticalPath from '../../../public/images/logo-vertical.png';
 import { containerClasses, logoClasses } from './classes';
 import clsx from 'clsx';
+import Link from 'next/link';
 
 interface LogoProps {
   size?: 'small' | 'medium' | 'large';
@@ -20,7 +21,9 @@ export default function Logo({
   className,
 }: LogoProps) {
   return (
-    <div className={clsx(className, containerClasses({ size, orientation }))}>
+    <Link
+      href='/'
+      className={clsx(className, containerClasses({ size, orientation }))}>
       <Image
         src={logoHorizontalPath}
         alt='logo'
@@ -31,6 +34,6 @@ export default function Logo({
         alt='logo'
         className={logoClasses({ type: orientation === 'vertical' ? 'show' : 'hide', animated })}
       />
-    </div>
+    </Link>
   );
 }

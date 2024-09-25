@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
 
-const config: Config = {
+export default {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -37,12 +37,12 @@ const config: Config = {
     plugin(function({ addUtilities }) {
       addUtilities({
         '.content-view-box': {
-          maxWidth: '1072px',
-          paddingInline: '32px',
-          marginInline: 'auto',
+          '@apply max-w-[1072px] px-8 mx-auto': {}
+        },
+        '.text-header': {
+          '@apply text-nowrap font-main font-bold text-primary text-center': {}
         }
       })
     }) 
   ],
-};
-export default config;
+} satisfies Config;
