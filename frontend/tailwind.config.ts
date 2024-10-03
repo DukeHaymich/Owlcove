@@ -11,12 +11,18 @@ export default {
     extend: {
       colors: {
         primary: '#990012',
-        beige: '#e4c482'
+        snow: '#FCF6F6',
+        jasmine: '#ffd173', //'#e4c482'
+        peach: '#FEE4B5'
       },
       fontFamily: {
         sans: ['Montserrat', 'Open Sans', 'sans-serif'],
         label: ['Open Sans', 'sans-serif'],
         main: ['Montserrat', 'sans-serif']
+      },
+      zIndex: {
+        'header': '100',
+        'skip-navigation': '110'
       },
       animation: {
         "fade-in": 'fade-in 0.25s linear forwards',
@@ -40,9 +46,20 @@ export default {
           '@apply max-w-[1072px] px-8 mx-auto': {}
         },
         '.text-header': {
-          '@apply text-nowrap font-main font-bold text-primary text-center': {}
+          '@apply text-nowrap font-main font-semibold text-primary text-center': {}
         }
       })
-    }) 
+    }),
+    plugin(function({ addComponents }) {
+      addComponents({
+        '.carousel-container': {
+          '@apply flex': {}
+        },
+        '.carousel-slide': {
+          flex: '0 0 100%',
+          'min-width': '0'
+        }
+      })
+    })
   ],
 } satisfies Config;

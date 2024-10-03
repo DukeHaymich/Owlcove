@@ -6,7 +6,7 @@ export interface IMenuLink {
 export interface IMenuGroup {
   name: string;
   url?: string;
-  children: IMenuItem[];
+  children: MenuItem[];
 }
 
-export type IMenuItem = IMenuGroup | IMenuLink;
+export type MenuItem = IMenuGroup | IMenuLink;
