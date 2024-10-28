@@ -1,4 +1,4 @@
-import { MenuItem as IMenuItem } from '@/utils/type/header';
+import { IMenuItem } from '@/utils/type/header';
 import MenuGroup from './MenuGroup';
 import MenuLink from './MenuLink';
 
