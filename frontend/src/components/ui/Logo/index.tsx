@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 
-import logoHorizontalPath from '../../../public/images/logo-horizontal.png';
-import logoVerticalPath from '../../../public/images/logo-vertical.png';
+import logoHorizontalPath from '@/public/images/logo-horizontal.png';
+import logoVerticalPath from '@/public/images/logo-vertical.png';
 import { containerClasses, logoClasses } from './classes';
 import clsx from 'clsx';
 import Link from 'next/link';

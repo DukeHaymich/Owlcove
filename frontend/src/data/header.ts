@@ -1,6 +1,6 @@
-import { IMenuItem } from "@/utils/type/header";
+import { MenuItem } from "@/utils/type/header";
 
-export const menuHeaderData: IMenuItem[] = [
+export const menuHeaderData: MenuItem[] = [
   {
     name: 'Thực đơn',
     url: '/menu',
