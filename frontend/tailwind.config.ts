@@ -25,6 +25,12 @@ export default {
       height: {
         'content': 'calc(100vh - 2.5rem)'
       },
+      width: {
+        'content': '1072px'
+      },
+      maxWidth: {
+        'content': '1072px'
+      },
       zIndex: {
         'header': '100',
         'skip-navigation': '110'
@@ -48,7 +54,7 @@ export default {
     plugin(function({ addUtilities }) {
       addUtilities({
         '.content-view-box': {
-          '@apply max-w-[1072px] px-8 mx-auto': {}
+          '@apply max-w-content px-8 mx-auto': {}
         },
         '.text-header': {
           '@apply text-nowrap font-main font-semibold text-primary text-center': {}

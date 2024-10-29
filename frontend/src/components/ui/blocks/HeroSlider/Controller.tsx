@@ -1,9 +1,16 @@
 import { CarouselApi } from '@/components/common/Carousel';
 import clsx from 'clsx';
+import Image from 'next/image';
 import { ButtonHTMLAttributes, useCallback, useEffect, useState } from 'react';
+
+import LeftArrow from '@/public/images/svg/left-arrow.svg';
 
 interface IDotButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isActive: boolean;
+}
+
+interface IArrowButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  isNext?: boolean;
 }
 
 interface ISlideControllerProps {
@@ -38,10 +45,14 @@ export const useDotButton = (api: CarouselApi | undefined): UseDotButtonType => 
 
   useEffect(() => {
     if (!api) return;
-
+    // Subscribe
     onInit(api);
     onSelect(api);
     api.on('reInit', onInit).on('reInit', onSelect).on('select', onSelect);
+    // Clean-up & unsubscribe
+    return () => {
+      api.off('reInit', onInit).off('reInit', onSelect).off('select', onSelect);
+    };
   }, [api, onInit, onSelect]);
 
   return {
@@ -64,18 +75,95 @@ function DotButton({ className, isActive, ...rest }: IDotButtonProps) {
   );
 }
 
+type UsePrevNextButtonsType = {
+  prevBtnDisabled: boolean;
+  nextBtnDisabled: boolean;
+  onPrevButtonClick: () => void;
+  onNextButtonClick: () => void;
+};
+
+export const usePrevNextButtons = (api: CarouselApi | undefined): UsePrevNextButtonsType => {
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
+
+  const onPrevButtonClick = useCallback(() => {
+    if (!api) return;
+    api.scrollPrev();
+  }, [api]);
+
+  const onNextButtonClick = useCallback(() => {
+    if (!api) return;
+    api.scrollNext();
+  }, [api]);
+
+  const onSelect = useCallback((api: CarouselApi) => {
+    api && setPrevBtnDisabled(!api.canScrollPrev());
+    api && setNextBtnDisabled(!api.canScrollNext());
+  }, []);
+
+  useEffect(() => {
+    if (!api) return;
+    // Subscribe
+    onSelect(api);
+    api.on('reInit', onSelect).on('select', onSelect);
+    // Clean-up & unsubscribe
+    return () => {
+      api.off('reInit', onSelect).off('select', onSelect);
+    };
+  }, [api, onSelect]);
+
+  return {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick,
+  };
+};
+
+function ArrowButton({ className, isNext = false, ...rest }: IArrowButtonProps) {
+  return (
+    <button
+      className={clsx(
+        'absolute top-0 h-full w-32 from-transparent to-transparent opacity-40 transition-all hover:from-dark/30 hover:opacity-100',
+        isNext ? 'right-0 bg-gradient-to-l' : 'left-0 bg-gradient-to-r',
+        className
+      )}
+      {...rest}>
+      <Image
+        className={clsx('mx-auto size-12', isNext ? 'rotate-180' : '')}
+        src={LeftArrow}
+        alt='arrow'
+        aria-hidden
+      />
+    </button>
+  );
+}
+
 export default function Controller({ api }: ISlideControllerProps) {
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(api);
+  const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } =
+    usePrevNextButtons(api);
 
   return (
-    <div className='absolute bottom-16 flex w-full justify-center gap-4'>
-      {scrollSnaps.map((_, index) => (
-        <DotButton
-          key={index}
-          onClick={() => onDotButtonClick(index)}
-          isActive={index === selectedIndex}
-        />
-      ))}
-    </div>
+    <>
+      <div className='absolute bottom-16 flex w-full justify-center gap-4'>
+        {scrollSnaps.map((_, index) => (
+          <DotButton
+            key={index}
+            onClick={() => onDotButtonClick(index)}
+            isActive={index === selectedIndex}
+          />
+        ))}
+      </div>
+      <ArrowButton
+        onClick={onPrevButtonClick}
+        disabled={prevBtnDisabled}
+      />
+      <ArrowButton
+        onClick={onNextButtonClick}
+        disabled={nextBtnDisabled}
+        isNext
+      />
+    </>
   );
 }
