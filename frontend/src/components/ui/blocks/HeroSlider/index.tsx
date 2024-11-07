@@ -34,7 +34,7 @@ export default function HeroSlider() {
   const throttledReset = useThrottle(() => {
     console.log('reset');
     contentCarouselApi?.plugins()?.autoplay?.reset();
-  }, 2000);
+  }, 1000);
 
   const syncCarousels = useCallback((mainApi: CarouselApi, secondaryApi: CarouselApi) => {
     if (!mainApi || !secondaryApi) return;

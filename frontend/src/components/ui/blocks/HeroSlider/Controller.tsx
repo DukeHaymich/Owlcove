@@ -130,7 +130,7 @@ function ArrowButton({ className, isNext = false, ...rest }: IArrowButtonProps) 
       )}
       {...rest}>
       <Image
-        className={clsx('mx-auto size-12', isNext ? 'rotate-180' : '')}
+        className={clsx('mx-auto size-8', isNext ? 'rotate-180' : '')}
         src={LeftArrow}
         alt='arrow'
         aria-hidden

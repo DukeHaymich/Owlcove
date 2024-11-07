@@ -3,6 +3,7 @@ import { IHeroSliderItem } from '@/utils/type/landing';
 import { Carousel, CarouselContainer, CarouselSlide } from '@/components/common/Carousel';
 import { ComponentProps } from 'react';
 import Divider from './Divider';
+import Link from 'next/link';
 
 interface IContentProps extends ComponentProps<typeof Carousel> {
   data: IHeroSliderItem[];
@@ -24,8 +25,9 @@ export default function Content({ data, ...carouselProps }: IContentProps) {
                   <Button
                     className='flex w-fit font-medium'
                     size='lg'
-                    variant='outline'>
-                    {item.link.description}
+                    variant='outline'
+                    asChild>
+                    <Link href={item.link.url}>{item.link.description}</Link>
                   </Button>
                 </div>
               </CarouselSlide>
