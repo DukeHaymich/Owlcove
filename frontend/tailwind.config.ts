@@ -12,7 +12,7 @@ export default {
       colors: {
         primary: '#990012',
         secondary: '#AD2825',//'#FDEDD6',
-        papaya: '#FDF0D9', //'#FCF6F6',
+        cream: '#FDF0D9', //'#FCF6F6',
         jasmine: '#ffd173', //'#e4c482'
         peach: '#FEE4B5',
         dark: '#121212',
@@ -63,7 +63,7 @@ export default {
           '@apply text-nowrap font-label font-semibold text-primary text-center': {}
         },
         '.text-slider': {
-          '@apply text-center font-sans text-3xl font-normal leading-normal text-papaya': {}
+          '@apply text-center font-sans text-3xl font-normal leading-normal text-cream': {}
         },
         '.text-statistic': {
           '@apply text-numeric': {}

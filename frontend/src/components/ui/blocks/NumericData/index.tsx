@@ -7,8 +7,8 @@ import DiamondDivider from '@/public/images/diamond_divider.png';
 
 export default function NumericData() {
   return (
-    <section className='bg-papaya'>
-      <div className='flex justify-evenly py-12 content-view-box'>
+    <section className='bg-cream'>
+      <div className='flex justify-evenly content-view-box'>
         {statisticData.map((item, index) => {
           return (
             <React.Fragment key={index}>
@@ -19,7 +19,6 @@ export default function NumericData() {
                     alt='divider'
                     width={24}
                     height={24}
-                    objectFit=''
                   />
                 </div>
               )}
