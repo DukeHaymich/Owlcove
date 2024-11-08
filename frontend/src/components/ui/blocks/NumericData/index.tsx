@@ -13,7 +13,7 @@ export default function NumericData() {
           return (
             <React.Fragment key={index}>
               {index === 0 ? null : (
-                <div className='relative mx-5 my-auto'>
+                <div className='relative my-auto'>
                   <Image
                     src={DiamondDivider}
                     alt='divider'

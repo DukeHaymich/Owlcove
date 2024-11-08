@@ -66,7 +66,7 @@ export default {
           '@apply text-center font-sans text-3xl font-normal leading-normal text-cream': {}
         },
         '.text-statistic': {
-          '@apply text-numeric': {}
+          '@apply text-numeric text-primary font-medium': {}
         }
       })
     }),

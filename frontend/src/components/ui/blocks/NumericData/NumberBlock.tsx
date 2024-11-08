@@ -19,7 +19,7 @@ function easeFunction(x: number): number {
 export default function NumberBlock({
   start = 0,
   end,
-  duration = 3000,
+  duration = 2500,
   animated = false,
   prefix,
   prefixClassName,
