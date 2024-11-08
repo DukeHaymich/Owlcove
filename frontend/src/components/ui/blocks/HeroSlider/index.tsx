@@ -32,7 +32,6 @@ export default function HeroSlider() {
   const [contentCarouselApi, setContentCarouselApi] = useState<CarouselApi>();
 
   const throttledReset = useThrottle(() => {
-    console.log('reset');
     contentCarouselApi?.plugins()?.autoplay?.reset();
   }, 1000);
 

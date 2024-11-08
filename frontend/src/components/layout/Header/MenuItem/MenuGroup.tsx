@@ -16,7 +16,7 @@ export default function MenuGroup({ name, children, url = '', isPrimary = true }
   const Container = url.length > 0 ? Link : 'div';
   return (
     <div
-      className='relative h-10 w-full max-w-[196px] text-header hover:bg-peach/95'
+      className='text-menu relative h-10 w-full max-w-[196px] hover:bg-peach/95'
       onMouseEnter={() => setShowSubMenu(true)}
       onMouseLeave={() => setShowSubMenu(false)}>
       <Container

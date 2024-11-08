@@ -11,28 +11,31 @@ export default {
     extend: {
       colors: {
         primary: '#990012',
-        secondary: '#FDEDD6',
-        snow: '#FCF6F6',
+        secondary: '#AD2825',//'#FDEDD6',
+        papaya: '#FDF0D9', //'#FCF6F6',
         jasmine: '#ffd173', //'#e4c482'
         peach: '#FEE4B5',
         dark: '#121212',
       },
       fontFamily: {
-        sans: ['Montserrat', 'Open Sans', 'sans-serif'],
-        label: ['Open Sans', 'sans-serif'],
-        main: ['Montserrat', 'sans-serif']
+        sans: ['Open Sans', 'sans-serif'],
+        serif: ['Lora', 'serif'],
+        label: ['Montserrat', 'sans-serif']
+      },
+      fontSize: {
+        numeric: '2.875rem'
       },
       height: {
-        'content': 'calc(100vh - 2.5rem)'
+        content: 'calc(100vh - 2.5rem)'
       },
       width: {
-        'content': '1072px'
+        content: '1072px'
       },
       maxWidth: {
-        'content': '1072px'
+        content: '1072px'
       },
       zIndex: {
-        'header': '100',
+        header: '100',
         'skip-navigation': '110'
       },
       animation: {
@@ -56,9 +59,15 @@ export default {
         '.content-view-box': {
           '@apply max-w-content px-8 mx-auto': {}
         },
-        '.text-header': {
-          '@apply text-nowrap font-main font-semibold text-primary text-center': {}
+        '.text-menu': {
+          '@apply text-nowrap font-label font-semibold text-primary text-center': {}
         },
+        '.text-slider': {
+          '@apply text-center font-sans text-3xl font-normal leading-normal text-papaya': {}
+        },
+        '.text-statistic': {
+          '@apply text-numeric': {}
+        }
       })
     }),
     plugin(function ({ matchUtilities, theme }) {

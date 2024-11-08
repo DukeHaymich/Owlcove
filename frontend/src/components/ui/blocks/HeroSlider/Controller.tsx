@@ -66,8 +66,8 @@ function DotButton({ className, isActive, ...rest }: IDotButtonProps) {
   return (
     <button
       className={clsx(
-        'size-5 rounded-full border-2 border-secondary',
-        isActive ? 'bg-secondary' : '',
+        'border-papaya size-5 rounded-full border-2',
+        isActive ? 'bg-papaya' : '',
         className
       )}
       {...rest}

@@ -6,7 +6,7 @@ import MenuMedia from './MenuMedia';
 export default function Footer() {
   const { locations, media } = footerData;
   return (
-    <footer className='bg-jasmine pb-5 font-label text-primary'>
+    <footer className='bg-jasmine pb-5 font-sans text-primary'>
       <div className='grid grid-flow-col grid-cols-2 py-20 content-view-box'>
         <div className='flex w-full flex-col justify-between'>
           <Logo

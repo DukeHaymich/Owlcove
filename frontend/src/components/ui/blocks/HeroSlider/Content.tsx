@@ -19,9 +19,7 @@ export default function Content({ data, ...carouselProps }: IContentProps) {
             return (
               <CarouselSlide key={index}>
                 <div className='flex h-full flex-col items-center gap-5'>
-                  <p className='mb-5 text-center font-label text-3xl font-normal leading-normal text-secondary'>
-                    {item.description}
-                  </p>
+                  <p className='text-slider mb-5'>{item.description}</p>
                   <Button
                     className='flex w-fit font-medium'
                     size='lg'
