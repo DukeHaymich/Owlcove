@@ -5,9 +5,9 @@ import { heroSliderData } from '@/data/heroslider';
 import Autoplay from 'embla-carousel-autoplay';
 import Fade from 'embla-carousel-fade';
 import { useCallback, useEffect, useState } from 'react';
-import Content from './Content';
+import Description from './Content/Description';
 import Controller from './Controller';
-import HeroImage from './HeroImage';
+import HeroImage from './Content/HeroImage';
 import { useThrottle } from '@/hooks';
 
 export default function HeroSlider() {
@@ -76,7 +76,7 @@ export default function HeroSlider() {
         setApi={setImageCarouselApi}
         opts={imageCarouselOptions}
       />
-      <Content
+      <Description
         data={heroSliderData}
         setApi={setContentCarouselApi}
         plugins={[autoplayPlugin, fadePlugin]}

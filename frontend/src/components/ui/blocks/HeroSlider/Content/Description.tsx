@@ -5,11 +5,11 @@ import { ComponentProps } from 'react';
 import Divider from './Divider';
 import Link from 'next/link';
 
-interface IContentProps extends ComponentProps<typeof Carousel> {
+interface IDescriptionProps extends ComponentProps<typeof Carousel> {
   data: IHeroSliderItem[];
 }
 
-export default function Content({ data, ...carouselProps }: IContentProps) {
+export default function Description({ data, ...carouselProps }: IDescriptionProps) {
   return (
     <div className='absolute left-1/2 top-1/2 mx-0 w-full -translate-x-1/2 -translate-y-1/2 content-view-box'>
       <Divider />
@@ -19,7 +19,7 @@ export default function Content({ data, ...carouselProps }: IContentProps) {
             return (
               <CarouselSlide key={index}>
                 <div className='flex h-full flex-col items-center gap-5'>
-                  <p className='text-slider mb-5'>{item.description}</p>
+                  <p className='mb-5 text-slider'>{item.description}</p>
                   <Button
                     className='flex w-fit font-medium'
                     size='lg'

@@ -1,7 +1,7 @@
 'use client';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-interface INumberBlockProps extends React.ComponentProps<'span'> {
+interface ICounterProps extends React.ComponentProps<'span'> {
   start?: number;
   end: number;
   duration?: number;
@@ -16,7 +16,7 @@ function easeFunction(x: number): number {
   return x === 1 ? 1 : 1 - Math.pow(2, -11 * x);
 }
 
-export default function NumberBlock({
+export default function Counter({
   start = 0,
   end,
   duration = 2500,
@@ -26,7 +26,7 @@ export default function NumberBlock({
   suffix,
   suffixClassName,
   ...props
-}: INumberBlockProps) {
+}: ICounterProps) {
   const [value, setValue] = useState<number>(animated ? start : end);
   const delay = 25;
   const range = end - start;
@@ -57,9 +57,9 @@ export default function NumberBlock({
 
   return (
     <span {...props}>
-      <span className={prefixClassName}>{prefix}</span>
+      {prefix ? <span className={prefixClassName}>{prefix}</span> : null}
       {value}
-      <span className={suffixClassName}>{suffix}</span>
+      {suffix ? <span className={suffixClassName}>{suffix}</span> : null}
     </span>
   );
 }

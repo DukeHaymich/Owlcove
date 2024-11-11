@@ -1,6 +1,6 @@
-import { IStatisticItem } from "@/utils/type/landing";
+import { INumericSummaryItem } from "@/utils/type/landing";
 
-export const statisticData: IStatisticItem[] = [
+export const numericSummaryData: INumericSummaryItem[] = [
   {
     prefix: "Hơn",
     numericData: 5,

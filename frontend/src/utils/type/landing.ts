@@ -11,7 +11,7 @@ export interface IHeroSliderItem {
   link: ILink;
 }
 
-export interface IStatisticItem {
+export interface INumericSummaryItem {
   prefix?: string;
   suffix?: string;
   numericData: number;

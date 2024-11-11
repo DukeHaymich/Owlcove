@@ -1,20 +1,20 @@
 'use client';
-import { IStatisticItem } from '@/utils/type/landing';
+import { INumericSummaryItem } from '@/utils/type/landing';
 import React from 'react';
-import NumberBlock from './NumberBlock';
+import Counter from './Counter';
 import { useInView } from 'react-intersection-observer';
 import clsx from 'clsx';
 
-interface INumericItemProps extends IStatisticItem {}
+interface ISummaryItemProps extends INumericSummaryItem {}
 
-export default function NumericItem({
+export default function SummaryItem({
   numericData,
   animated,
   prefix,
   suffix,
   prefixNumericData,
   suffixNumericData,
-}: INumericItemProps) {
+}: ISummaryItemProps) {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.75,
@@ -27,13 +27,13 @@ export default function NumericItem({
         inView ? 'opacity-100' : 'translate-y-10 opacity-0'
       )}>
       <span className='align-middle'>{prefix}</span>
-      <NumberBlock
+      <Counter
         end={numericData}
         prefix={prefixNumericData}
         suffix={suffixNumericData}
-        suffixClassName='text-3xl align-middle'
+        suffixClassName='text-3xl align-top'
         animated={inView && animated}
-        className='inline-block px-2 align-middle text-statistic'
+        className='inline-block px-2 align-top text-statistic'
       />
       <br />
       {suffix}

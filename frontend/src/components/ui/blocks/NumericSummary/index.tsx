@@ -1,15 +1,15 @@
-import { statisticData } from '@/data/statistics';
+import { numericSummaryData } from '@/data/numericsummary';
 import React from 'react';
-import NumericItem from './NumericItem';
+import SummaryItem from './SummaryItem';
 import Image from 'next/image';
 
 import DiamondDivider from '@/public/images/diamond_divider.png';
 
-export default function NumericData() {
+export default function NumericSummary() {
   return (
     <section className='bg-cream'>
       <div className='flex justify-evenly content-view-box'>
-        {statisticData.map((item, index) => {
+        {numericSummaryData.map((item, index) => {
           return (
             <React.Fragment key={index}>
               {index === 0 ? null : (
@@ -22,7 +22,7 @@ export default function NumericData() {
                   />
                 </div>
               )}
-              <NumericItem {...item} />
+              <SummaryItem {...item} />
             </React.Fragment>
           );
         })}
