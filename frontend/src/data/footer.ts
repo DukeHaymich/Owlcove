@@ -14,7 +14,7 @@ export const footerData: IMenuContent = {
   media: [
     {
       name: 'Facebook',
-      url: '/facebook'
+      url: 'https://www.facebook.com/owlcove.bistro'
     },
     {
       name: 'Zalo',

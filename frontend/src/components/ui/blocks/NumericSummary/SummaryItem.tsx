@@ -15,7 +15,7 @@ export default function SummaryItem({
   prefixNumericData,
   suffixNumericData,
 }: ISummaryItemProps) {
-  const { ref, inView } = useInView({
+  const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.75,
   });

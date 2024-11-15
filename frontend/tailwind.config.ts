@@ -10,10 +10,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#990012',
-        secondary: '#AD2825',//'#FDEDD6',
-        cream: '#FDF0D9', //'#FCF6F6',
-        jasmine: '#ffd173', //'#e4c482'
+        // primary: '#990012',
+        // secondary: '#D42000',
+        // cream: '#FDF0D9',
+        // white: '#FCF6F6',
+        // peach: '#FADDA9',
+
+        primary: '#960018',
+        secondary: '#BA160C',
+        cream: '#FFEFD5',
+        jasmine: '#FFD173',
+        vintage: '#E4C482',
         peach: '#FEE4B5',
         dark: '#121212',
       },
@@ -23,7 +30,7 @@ export default {
         label: ['Montserrat', 'sans-serif']
       },
       fontSize: {
-        numeric: '2.875rem'
+        numeric: '2.875rem',
       },
       height: {
         content: 'calc(100vh - 2.5rem)'
@@ -37,6 +44,9 @@ export default {
       zIndex: {
         header: '100',
         'skip-navigation': '110'
+      },
+      transitionDelay: {
+        '250': '250ms'
       },
       animation: {
         "fade-in": 'fade-in 1s ease-out forwards',
@@ -67,6 +77,15 @@ export default {
         },
         '.text-statistic': {
           '@apply text-numeric text-primary font-medium': {}
+        },
+        '.text-body': {
+          '@apply whitespace-pre-wrap text-justify leading-relaxed tracking-wide word-wide': {}
+        },
+        '.text-heading': {
+          '@apply text-4xl tracking-tight font-medium': {}
+        },
+        '.bg-linear-1': {
+          '@apply from-cream to-peach': {}
         }
       })
     }),
@@ -86,6 +105,14 @@ export default {
           }),
         },
         { values: theme('transitionDelay') }
+      )
+      matchUtilities(
+        {
+          'word': (value) => ({
+            wordSpacing: value,
+          }),
+        },
+        { values: theme('letterSpacing') }
       )
     }),
   ],

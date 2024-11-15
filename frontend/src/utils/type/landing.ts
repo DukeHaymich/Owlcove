@@ -19,3 +19,8 @@ export interface INumericSummaryItem {
   prefixNumericData?: string;
   suffixNumericData?: string;
 }
+ export interface IAboutItem {
+  title: string;
+  description: string;
+  img: StaticImageData | string
+ }

@@ -14,7 +14,7 @@ export const numericSummaryData: INumericSummaryItem[] = [
   },
   {
     prefix: "Thực hiện bởi",
-    numericData: 30,
+    numericData: 20,
     suffixNumericData: "+",
     suffix: "đầu bếp chuyên nghiệp",
     animated: true
