@@ -11,7 +11,7 @@ export const aboutData: IAboutItem[] = [
   },
   {
     title: "Sứ mệnh",
-    description: "Lorem ipsum",
+    description: "Tại Owlcove, thực đơn được chúng tôi sáng tạo nên từ những nguyên liệu tươi ngon, an toàn, được làm trong ngày; thêm thắt hương vị quen thuộc mà vẫn giữ được nét riêng của từng địa phương.<br/><br/>Dù là thưởng thức bữa ăn tĩnh lặng hay tụ họp cùng gia đình, bạn bè, Owlcove luôn mang đến không chỉ là món ăn mà cả về trải nghiệm nuôi dưỡng cả cơ thể lẫn tâm hồn.",
     img: About2
   }
 ]
