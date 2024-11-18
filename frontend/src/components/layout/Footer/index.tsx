@@ -6,7 +6,7 @@ import MenuMedia from './MenuMedia';
 export default function Footer() {
   const { locations, media } = footerData;
   return (
-    <footer className='bg-jasmine pb-5 font-sans text-primary'>
+    <footer className='bg-cream-300 pb-5 font-sans text-primary'>
       <div className='grid grid-flow-col grid-cols-2 py-20 content-view-box'>
         <div className='flex w-full flex-col justify-between'>
           <Logo
@@ -23,7 +23,7 @@ export default function Footer() {
           <MenuLocation data={locations} />
         </div>
       </div>
-      <p className='mt-5 w-full bg-peach py-2 text-center align-middle text-lg text-primary'>
+      <p className='bg-cream-200 mt-5 w-full py-2 text-center align-middle text-lg text-primary'>
         2024. For demonstration purpose only
       </p>
     </footer>

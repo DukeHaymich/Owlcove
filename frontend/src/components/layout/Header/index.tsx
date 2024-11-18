@@ -9,7 +9,7 @@ import MenuItem from './MenuItem';
 export default function Header() {
   const [orientation] = useState<'vertical' | 'horizontal'>('vertical');
   return (
-    <header className='sticky top-0 z-header -mb-10 bg-gradient-to-b from-jasmine from-50% to-peach/95 to-50%'>
+    <header className='from-cream-300 to-cream-200/95 sticky top-0 z-header -mb-10 bg-gradient-to-b from-50% to-50%'>
       <div className='absolute left-0 right-0 mx-auto h-10 content-view-box'>
         {/* For upper row content */}
       </div>

@@ -11,7 +11,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <>
       <Link
-        className='bg-jasmine absolute z-skip-navigation h-0 overflow-hidden px-10 text-center font-medium leading-10 text-[#0F4970] focus:h-10'
+        className='bg-cream-300 absolute z-skip-navigation h-0 overflow-hidden px-10 text-center font-medium leading-10 text-[#0F4970] focus:h-10'
         href='#main-content'>
         Đi đến nội dung chính
       </Link>

@@ -11,7 +11,7 @@ export const buttonVariants = cva(
         outline:
           "border-2 border-cream bg-cream/10 text-cream bg-none hover:bg-cream/20",
         secondary:
-          "bg-jasmine text-dark hover:bg-jasmine/80",
+          "bg-cream-300 text-dark hover:bg-cream-300/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },

@@ -6,7 +6,7 @@ export default function MenuLink({ name, url }: IMenuLink) {
   return (
     <Link
       href={url}
-      className='text-menu table h-10 w-full max-w-[196px] hover:bg-peach/95'>
+      className='hover:bg-cream-200/95 table h-10 w-full max-w-[196px] text-menu'>
       <span className='table-cell align-middle'>{name}</span>
     </Link>
   );

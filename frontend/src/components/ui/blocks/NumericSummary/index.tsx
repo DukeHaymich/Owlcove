@@ -7,7 +7,7 @@ import DiamondDivider from '@/public/images/diamond_divider.png';
 
 export default function NumericSummary() {
   return (
-    <section className='bg-cream'>
+    <section className='bg-cream py-20'>
       <div className='flex justify-evenly content-view-box'>
         {numericSummaryData.map((item, index) => {
           return (

@@ -4,7 +4,7 @@ import Item from './Item';
 
 export default function About() {
   return (
-    <section className='space-y-16 bg-gradient-to-b bg-linear-1'>
+    <section className='space-y-20 bg-gradient-to-b bg-linear-1'>
       {aboutData.map((item, index) => {
         return (
           <Item

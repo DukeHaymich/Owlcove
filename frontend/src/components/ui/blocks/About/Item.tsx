@@ -16,7 +16,7 @@ interface IItemProps extends IAboutItem {
 export default function Item({ imgPosition, title, description, img }: IItemProps) {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 0.75,
   });
   return (
     <div
@@ -46,20 +46,20 @@ export default function Item({ imgPosition, title, description, img }: IItemProp
           className='absolute mx-10 my-16 align-middle'>
           <h1
             className={clsx(
-              'text-primary transition-opacity duration-700 text-heading',
+              'font-serif text-primary transition-opacity duration-700 text-heading',
               inView ? 'opacity-100' : 'opacity-0'
             )}>
             {title}
           </h1>
           <div
             className={clsx(
-              'delay-250 my-5 h-px w-1/6 bg-secondary transition-all duration-700',
+              'bg-primary-light my-5 h-px w-1/6 transition-all delay-250 duration-700',
               inView ? 'opacity-100' : 'translate-x-10 opacity-0'
             )}
           />
           <div
             className={clsx(
-              'text-secondary transition-opacity delay-500 duration-700 text-body',
+              'text-primary-light transition-opacity delay-500 duration-700 text-body',
               inView ? 'opacity-100' : 'opacity-0'
             )}
             dangerouslySetInnerHTML={{ __html: sanitizeHTML(description) }}

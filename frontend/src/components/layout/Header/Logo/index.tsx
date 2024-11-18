@@ -7,7 +7,7 @@ interface IMainLogoProps {
 export default function MainLogo({ orientation }: IMainLogoProps) {
   return (
     <div className='w-fit self-start'>
-      <div className='bg-jasmine mx-auto max-w-fit translate-y-9 rounded-b-[90%] px-4'>
+      <div className='bg-cream-300 mx-auto max-w-fit translate-y-9 rounded-b-[90%] px-4'>
         <Logo
           orientation={orientation}
           size='medium'

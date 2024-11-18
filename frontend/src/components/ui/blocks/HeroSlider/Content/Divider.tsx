@@ -3,23 +3,39 @@
 import Image from 'next/image';
 
 import HeroDivider from '@/public/images/hero-divider.png';
-import { useState } from 'react';
 import clsx from 'clsx';
+import { useInView } from 'react-intersection-observer';
+import { cva, VariantProps } from 'class-variance-authority';
 
-export default function Divider() {
-  const [isMount, setIsMount] = useState<boolean>(false);
+const dividerClasses = cva('min-h-[58px] min-w-[640px]', {
+  variants: {
+    color: {
+      primary: 'mask-color-primary',
+      cream: 'mask-color-cream',
+    },
+  },
+  defaultVariants: { color: 'primary' },
+});
+
+interface IDividerProps extends VariantProps<typeof dividerClasses> {}
+
+export default function Divider({ color = 'primary' }: IDividerProps) {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0,
+  });
   return (
     <div
+      ref={ref}
       className={clsx(
         'mx-auto mb-5 h-[58px] max-w-[640px] transition-all duration-[1.5s]',
-        isMount ? '[clip-path:inset(0)]' : '[clip-path:inset(0_100%)]'
+        inView ? '[clip-path:inset(0)]' : '[clip-path:inset(0_100%)]'
       )}>
       <Image
         src={HeroDivider}
         alt='divider'
         loading='eager'
-        className='min-h-[58px] min-w-[640px]'
-        onLoad={() => setIsMount(true)}
+        className={dividerClasses({ color })}
       />
     </div>
   );

@@ -15,14 +15,26 @@ export default {
         // cream: '#FDF0D9',
         // white: '#FCF6F6',
         // peach: '#FADDA9',
+        // jasmine: '#FFD173',
+        // peach: '#FEE4B5',
+        // secondary: '#BA160C',
 
-        primary: '#960018',
-        secondary: '#BA160C',
-        cream: '#FFEFD5',
-        jasmine: '#FFD173',
+        primary: {
+          DEFAULT: '#960018',
+          light: '#BA160C'
+        },
+        cream: {
+          DEFAULT: '#FFEFD5',
+          100: '#FFEFD5',
+          200: '#FEE4B5',
+          300: '#FFD173'
+        },
         vintage: '#E4C482',
-        peach: '#FEE4B5',
         dark: '#121212',
+      },
+      dropShadow: {
+        'mask-primary': '0px 1000px #990012',
+        'mask-cream': '0px 1000px #FFEFD5',
       },
       fontFamily: {
         sans: ['Open Sans', 'sans-serif'],
@@ -85,7 +97,13 @@ export default {
           '@apply text-4xl tracking-tight font-medium': {}
         },
         '.bg-linear-1': {
-          '@apply from-cream to-peach': {}
+          '@apply from-cream to-cream-200': {}
+        },
+        '.mask-color-primary': {
+          '@apply drop-shadow-mask-primary translate-y-[-1000px]': {}
+        },
+        '.mask-color-cream': {
+          '@apply drop-shadow-mask-cream translate-y-[-1000px]': {}
         }
       })
     }),

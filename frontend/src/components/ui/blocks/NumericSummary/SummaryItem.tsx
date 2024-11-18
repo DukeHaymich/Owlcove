@@ -23,7 +23,7 @@ export default function SummaryItem({
     <h1
       ref={ref}
       className={clsx(
-        'flex-1 text-wrap py-12 text-center font-serif text-xl leading-9 text-secondary transition-all duration-1000',
+        'text-primary-light flex-1 text-wrap text-center font-serif text-xl leading-9 transition-all duration-1000',
         inView ? 'opacity-100' : 'translate-y-10 opacity-0'
       )}>
       <span className='align-middle'>{prefix}</span>
