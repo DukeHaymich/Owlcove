@@ -11,14 +11,14 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <>
       <Link
-        className='bg-cream-300 absolute z-skip-navigation h-0 overflow-hidden px-10 text-center font-medium leading-10 text-[#0F4970] focus:h-10'
+        className='absolute z-skip-navigation h-0 overflow-hidden bg-cream-300 px-10 text-center font-medium leading-10 text-[#0F4970] focus:h-10'
         href='#main-content'>
         Đi đến nội dung chính
       </Link>
       <Header />
       <main
         id='main-content'
-        className='bg-gray-50'>
+        className='bg-cream-100'>
         {children}
       </main>
       <Footer />

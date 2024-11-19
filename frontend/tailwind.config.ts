@@ -21,7 +21,8 @@ export default {
 
         primary: {
           DEFAULT: '#960018',
-          light: '#BA160C'
+          light: '#BA160C',
+          lighter: '#D42000',
         },
         cream: {
           DEFAULT: '#FFEFD5',
@@ -52,6 +53,9 @@ export default {
       },
       maxWidth: {
         content: '1072px'
+      },
+      aspectRatio: {
+        screen: '4 / 3',
       },
       zIndex: {
         header: '100',
@@ -95,6 +99,12 @@ export default {
         },
         '.text-heading': {
           '@apply text-4xl tracking-tight font-medium': {}
+        },
+        '.text-heading-2': {
+          '@apply text-2xl font-medium': {}
+        },
+        '.text-subscript': {
+          '@apply text-sm font-light font-sans italic': {}
         },
         '.bg-linear-1': {
           '@apply from-cream to-cream-200': {}
