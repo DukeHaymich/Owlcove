@@ -28,14 +28,14 @@ export default function MenuCard({ className, data }: IMenuCardProps) {
         'group/menu-card transition-all duration-1000',
         inView ? 'opacity-100' : 'translate-y-40 opacity-0'
       )}>
-      <div className='aspect-screen relative mb-2.5 w-full overflow-hidden'>
+      <div className='relative mb-2.5 aspect-screen w-full overflow-hidden'>
         <Image
           src={data.img ?? PlaceholderImage}
           alt={data.name}
           className='h-full w-full object-cover object-center transition-all duration-500 group-hover/menu-card:scale-105'
         />
       </div>
-      <h2 className='text-heading-2 group-hover/menu-card:text-primary-lighter text-center font-serif text-primary transition-all duration-500 group-hover/menu-card:underline'>
+      <h2 className='text-center font-serif text-primary transition-all duration-500 text-heading-2 group-hover/menu-card:text-primary-lighter group-hover/menu-card:underline'>
         {data.name}
       </h2>
     </Link>

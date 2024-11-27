@@ -16,7 +16,7 @@ interface IItemProps extends IAboutItem {
 export default function Item({ imgPosition, title, description, img }: IItemProps) {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.75,
+    threshold: 0.5,
   });
   return (
     <div
@@ -53,7 +53,7 @@ export default function Item({ imgPosition, title, description, img }: IItemProp
           </h1>
           <div
             className={clsx(
-              'bg-primary-light my-5 h-px w-1/6 transition-all delay-250 duration-700',
+              'my-5 h-px w-1/6 bg-primary-light transition-all delay-250 duration-700',
               inView ? 'opacity-100' : 'translate-x-10 opacity-0'
             )}
           />
