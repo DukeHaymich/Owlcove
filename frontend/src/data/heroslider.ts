@@ -15,7 +15,7 @@ export const heroSliderData: IHeroSliderItem[] = [
     img: Hero2,
     description: 'Hòa mình vào không gian cân bằng giữa sang trọng và mộc mạc, thưởng thức bữa ăn ấm áp được phục vụ tận tình chu đáo.',
     link: {
-      url: '/reservations',
+      url: '#reservations',
       description: 'Đặt chỗ ngay'
     }
   }

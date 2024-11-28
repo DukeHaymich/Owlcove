@@ -1,20 +1,34 @@
 import { VariantProps } from 'class-variance-authority';
 import React, { OptionHTMLAttributes, SelectHTMLAttributes } from 'react';
-import { selectContainerVariants, selectOptionVariants, selectPrimitiveVariants } from './style';
+import {
+  selectContainerVariants,
+  selectLabelVariants,
+  selectOptionVariants,
+  selectPrimitiveVariants,
+} from './style';
 
 interface SelectProps
   extends SelectHTMLAttributes<HTMLSelectElement>,
-    VariantProps<typeof selectContainerVariants> {}
+    VariantProps<typeof selectContainerVariants> {
+  label?: string;
+  containerClassName?: string;
+}
 
 const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
-  ({ className, variant, scale, ...props }, ref) => {
+  ({ className, containerClassName, variant, scale, label, id, ...props }, ref) => {
     return (
-      <div className={selectContainerVariants({ variant, scale, className })}>
+      <div className={selectContainerVariants({ variant, scale, className: containerClassName })}>
         <select
-          className={selectPrimitiveVariants({ scale })}
+          className={selectPrimitiveVariants({ scale, className })}
           ref={ref}
+          id={id}
           {...props}
         />
+        <label
+          className={selectLabelVariants({ variant, scale })}
+          htmlFor={id}>
+          {label}
+        </label>
       </div>
     );
   }

@@ -17,9 +17,11 @@ const dividerClasses = cva('min-h-[58px] min-w-[640px]', {
   defaultVariants: { color: 'primary' },
 });
 
-interface IDividerProps extends VariantProps<typeof dividerClasses> {}
+interface IDividerProps extends VariantProps<typeof dividerClasses> {
+  animated?: boolean;
+}
 
-export default function Divider({ color = 'primary' }: IDividerProps) {
+export default function Divider({ color = 'primary', animated = true }: IDividerProps) {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0,
@@ -29,7 +31,7 @@ export default function Divider({ color = 'primary' }: IDividerProps) {
       ref={ref}
       className={clsx(
         'mx-auto mb-5 h-[58px] max-w-[640px] transition-all duration-[1.5s]',
-        inView ? '[clip-path:inset(0)]' : '[clip-path:inset(0_100%)]'
+        animated || inView ? '[clip-path:inset(0)]' : '[clip-path:inset(0_100%)]'
       )}>
       <Image
         src={HeroDivider}
