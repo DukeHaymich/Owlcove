@@ -2,8 +2,8 @@ import { Button } from '@/components/common/Button';
 import { IHeroSliderItem } from '@/utils/type/landing';
 import { Carousel, CarouselContainer, CarouselSlide } from '@/components/common/Carousel';
 import { ComponentProps } from 'react';
-import Divider from './Divider';
 import Link from 'next/link';
+import Divider from '@/components/ui/Divider';
 
 interface IDescriptionProps extends ComponentProps<typeof Carousel> {
   data: IHeroSliderItem[];
@@ -21,8 +21,8 @@ export default function Description({ data, ...carouselProps }: IDescriptionProp
                 <div className='flex h-full flex-col items-center gap-5'>
                   <p className='mb-5 text-slider'>{item.description}</p>
                   <Button
-                    className='flex w-fit font-medium'
-                    size='lg'
+                    className='flex w-fit rounded-md font-medium'
+                    size='xl'
                     variant='outline'
                     asChild>
                     <Link href={item.link.url}>{item.link.description}</Link>

@@ -1,7 +1,7 @@
 import React from 'react';
-import Divider from '../HeroSlider/Content/Divider';
 import { menuFoodData } from '@/data/menuFood';
 import Menu from './Menu';
+import Divider from '@/components/ui/Divider';
 
 export default function MenuCategories() {
   return (
@@ -14,7 +14,7 @@ export default function MenuCategories() {
           {menuFoodData.description}
         </p>
         <Menu data={menuFoodData.categories} />
-        <p className='text-subscript text-primary-lighter mt-20 text-center'>
+        <p className='mt-20 text-center text-primary-lighter text-subscript'>
           *{menuFoodData.sidenote}
         </p>
       </div>

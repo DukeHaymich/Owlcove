@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 const textareaVariants = cva(
-  "transition-all w-full h-full peer",
+  "w-full h-full transition-all peer",
   {
     variants: {
       variant: {

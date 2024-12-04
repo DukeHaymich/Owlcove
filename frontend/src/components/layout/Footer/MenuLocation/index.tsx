@@ -1,14 +1,12 @@
 import { IContactItem } from '@/utils/type/footer';
 import ContactItem from './ContactItem';
+import { footerData } from '@/data/footer';
 
-interface IMenuLocationProps {
-  data: IContactItem[];
-}
-
-export default function MenuLocation({ data }: IMenuLocationProps) {
+export default function MenuLocation() {
+  const { locations } = footerData;
   return (
     <>
-      {data.map((item, index) => {
+      {locations.map((item: IContactItem, index) => {
         return (
           <ContactItem
             {...item}

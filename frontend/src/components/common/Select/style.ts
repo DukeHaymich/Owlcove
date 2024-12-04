@@ -5,7 +5,7 @@ const selectContainerVariants = cva(
   {
     variants: {
       variant: {
-        outline: "bg-transparent text-primary-light border border-primary border-t-0 hover:bg-cream-200/20 has-[:focus]:bg-cream-200/50 has-[:focus]:border-primary-lighter",
+        outline: "bg-transparent text-primary-light border border-primary border-t-0 focus-within:bg-cream-200/50 focus-within:border-primary-lighter hover:bg-cream-200/20",
       },
       scale: {
         normal: "h-12 rounded-md"

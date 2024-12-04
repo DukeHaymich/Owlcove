@@ -1,15 +1,13 @@
 import { IMenuMedia } from '@/utils/type/footer';
 
 import MediaItem from './MediaItem';
+import { footerData } from '@/data/footer';
 
-interface IMenuMediaProps {
-  data: IMenuMedia[];
-}
-
-export default function MenuMedia({ data }: IMenuMediaProps) {
+export default function MenuMedia() {
+  const { media } = footerData;
   return (
     <div className='mx-auto w-fit'>
-      {data.map((item, index) => {
+      {media.map((item: IMenuMedia, index) => {
         return (
           <MediaItem
             {...item}

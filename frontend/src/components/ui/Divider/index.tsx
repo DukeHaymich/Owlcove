@@ -5,17 +5,8 @@ import Image from 'next/image';
 import HeroDivider from '@/public/images/hero-divider.png';
 import clsx from 'clsx';
 import { useInView } from 'react-intersection-observer';
-import { cva, VariantProps } from 'class-variance-authority';
-
-const dividerClasses = cva('min-h-[58px] min-w-[640px]', {
-  variants: {
-    color: {
-      primary: 'mask-color-primary',
-      cream: 'mask-color-cream',
-    },
-  },
-  defaultVariants: { color: 'primary' },
-});
+import { VariantProps } from 'class-variance-authority';
+import { dividerClasses } from './style';
 
 interface IDividerProps extends VariantProps<typeof dividerClasses> {
   animated?: boolean;

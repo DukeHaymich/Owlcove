@@ -1,10 +1,8 @@
 import Logo from '@/components/ui/Logo';
-import { footerData } from '@/data/footer';
 import MenuLocation from './MenuLocation';
 import MenuMedia from './MenuMedia';
 
 export default function Footer() {
-  const { locations, media } = footerData;
   return (
     <footer className='bg-cream-300 pb-5 font-sans text-primary'>
       <div className='grid grid-flow-col grid-cols-2 py-20 content-view-box'>
@@ -16,14 +14,14 @@ export default function Footer() {
           />
           <div className='mx-auto w-fit'>
             <p className='mb-1'>Hoặc liên hệ với chúng tôi qua:</p>
-            <MenuMedia data={media} />
+            <MenuMedia />
           </div>
         </div>
         <div>
-          <MenuLocation data={locations} />
+          <MenuLocation />
         </div>
       </div>
-      <p className='bg-cream-200 mt-5 w-full py-2 text-center align-middle text-lg text-primary'>
+      <p className='mt-5 w-full bg-cream-200 py-2 text-center align-middle text-lg text-primary'>
         2024. For demonstration purpose only
       </p>
     </footer>

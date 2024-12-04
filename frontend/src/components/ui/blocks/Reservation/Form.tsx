@@ -6,12 +6,17 @@ import { Select, SelectOption } from '@/components/common/Select';
 import { Textarea } from '@/components/common/Textarea';
 import { footerData } from '@/data/footer';
 import { IReservationForm } from '@/utils/type/reservation';
-import React from 'react';
+import clsx from 'clsx';
+import React, { useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 
 const locationData = footerData.locations;
 
-export default function Form() {
+interface IFormProps {
+  inView: boolean;
+}
+
+export default function Form({ inView }: IFormProps) {
   const {
     handleSubmit,
     register,
@@ -27,6 +32,12 @@ export default function Form() {
     console.log(data);
   };
 
+  const today = useMemo(() => {
+    const date = new Date();
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+  }, []);
+
+  // console.log('OKaY');
   // console.log(watch('name'));
 
   return (
@@ -36,38 +47,56 @@ export default function Form() {
       <Input
         type='text'
         label='Tên'
-        containerClassName='col-span-5'
-        {...register('name')}
+        containerClassName={clsx(
+          'col-span-5 transition-all duration-500',
+          inView ? 'opacity-100' : 'opacity-0 -translate-x-10'
+        )}
+        {...register('name', { required: true, minLength: 2 })}
       />
       <Input
         type='tel'
         label='Số điện thoại'
-        containerClassName='col-span-4'
-        {...register('phone')}
+        containerClassName={clsx(
+          'col-span-4 transition-all duration-500',
+          inView ? 'opacity-100' : 'opacity-0 -translate-x-10'
+        )}
+        {...register('phone', { required: true, minLength: 7, pattern: /[0-9\s]{7,20}/ })}
       />
       <Input
         type='date'
         label='Ngày hẹn'
-        containerClassName='col-span-3'
-        {...register('date')}
+        containerClassName={clsx(
+          'col-span-3 transition-all duration-500 delay-150',
+          inView ? 'opacity-100' : 'opacity-0 -translate-x-10'
+        )}
+        {...register('date', { required: true, min: today })}
       />
       <Input
         type='time'
         label='Thời gian'
-        containerClassName='col-span-3'
-        {...register('time')}
+        containerClassName={clsx(
+          'col-span-3 transition-all duration-500 delay-150',
+          inView ? 'opacity-100' : 'opacity-0 -translate-x-10'
+        )}
+        {...register('time', { required: true })}
       />
       <Input
         type='number'
         label='Số lượng khách'
-        containerClassName='col-span-3'
-        {...register('customerCount')}
+        containerClassName={clsx(
+          'col-span-3 transition-all duration-500 delay-150',
+          inView ? 'opacity-100' : 'opacity-0 -translate-x-10'
+        )}
+        {...register('customerCount', { required: true, min: 1 })}
       />
       <Select
         label='Địa điểm'
-        containerClassName='col-span-full'
+        containerClassName={clsx(
+          'col-span-full transition-all duration-500 delay-300',
+          inView ? 'opacity-100' : 'opacity-0 -translate-x-10'
+        )}
         defaultValue=''
-        {...register('branch')}>
+        {...register('branch', { required: true, pattern: /^(?!\s*$).+/ })}>
         <SelectOption
           disabled
           value=''
@@ -86,7 +115,10 @@ export default function Form() {
       </Select>
       <Textarea
         label='Ghi chú'
-        containerClassName='col-span-full h-28'
+        containerClassName={clsx(
+          'col-span-full h-28 transition-all duration-500 delay-[450ms]',
+          inView ? 'opacity-100' : 'opacity-0 -translate-x-10'
+        )}
         className='resize-none'
         {...register('note')}
       />
@@ -94,7 +126,10 @@ export default function Form() {
       <div className='col-span-full mx-auto mt-2'>
         <Button
           type='submit'
-          className='px-12 py-6 text-xl'>
+          className={clsx(
+            'rounded-lg transition-opacity delay-700 duration-500',
+            inView ? 'opacity-100' : 'opacity-0'
+          )}>
           Đặt ngay
         </Button>
       </div>

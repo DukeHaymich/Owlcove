@@ -5,7 +5,7 @@ const inputVariants = cva(
   {
     variants: {
       variant: {
-        outline: "bg-transparent text-primary-light outline-none focus:ring-0 border border-primary placeholder-shown:border-t border-t-0 focus:border-primary-lighter focus:border-t-0 hover:bg-cream-200/20 focus:bg-cream-200/50",
+        outline: "bg-transparent text-primary-light outline-none focus:ring-0 border border-primary placeholder-shown:border-t-primary border-t-transparent focus:border-t-transparent focus:border-primary-lighter hover:bg-cream-200/20 focus:bg-cream-200/50",
       },
       scale: {
         normal: "h-12 px-3 pt-1 rounded-md"

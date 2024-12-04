@@ -14,21 +14,21 @@ export default function ContactItem({ address, phone, index }: ContactItemProps)
   return (
     <div className='mb-5 space-y-1 last:mb-0'>
       <p className='font-semibold underline'>Chi nhánh {index}</p>
-      <div className='block space-x-1 align-middle tracking-wide'>
+      <div>
         <Image
           src={LocationIcon}
           alt='location-icon'
-          className='inline'
+          className='float-left mr-1'
         />
-        <span className='align-middle'>{address}</span>
+        <p className='overflow-hidden align-middle tracking-wide'>{address}</p>
       </div>
-      <div className='block space-x-1 align-middle'>
+      <div>
         <Image
           src={PhoneIcon}
           alt='phone-icon'
-          className='inline'
+          className='float-left mr-1'
         />
-        <span className='align-middle'>{format_phone_number(phone)}</span>
+        <p className='overflow-hidden align-middle tracking-wide'>{format_phone_number(phone)}</p>
       </div>
     </div>
   );
