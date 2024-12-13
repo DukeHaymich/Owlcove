@@ -6,6 +6,7 @@ import {
   selectOptionVariants,
   selectPrimitiveVariants,
 } from './style';
+import clsx from 'clsx';
 
 interface SelectProps
   extends SelectHTMLAttributes<HTMLSelectElement>,
@@ -17,18 +18,20 @@ interface SelectProps
 const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
   ({ className, containerClassName, variant, scale, label, id, ...props }, ref) => {
     return (
-      <div className={selectContainerVariants({ variant, scale, className: containerClassName })}>
-        <select
-          className={selectPrimitiveVariants({ scale, className })}
-          ref={ref}
-          id={id}
-          {...props}
-        />
-        <label
-          className={selectLabelVariants({ variant, scale })}
-          htmlFor={id}>
-          {label}
-        </label>
+      <div className={clsx('relative', containerClassName)}>
+        <div className={selectContainerVariants({ variant, scale, className })}>
+          <select
+            className={selectPrimitiveVariants({ scale })}
+            ref={ref}
+            id={id}
+            {...props}
+          />
+          <label
+            className={selectLabelVariants({ variant, scale })}
+            htmlFor={id}>
+            {label}
+          </label>
+        </div>
       </div>
     );
   }

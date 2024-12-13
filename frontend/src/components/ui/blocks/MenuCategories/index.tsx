@@ -1,6 +1,6 @@
 import React from 'react';
 import { menuFoodData } from '@/data/menuFood';
-import Menu from './Menu';
+import MenuCategory from './MenuCategory';
 import Divider from '@/components/ui/Divider';
 
 export default function MenuCategories() {
@@ -13,7 +13,7 @@ export default function MenuCategories() {
         <p className='mx-auto mb-10 max-w-xl !text-center text-primary-light text-body'>
           {menuFoodData.description}
         </p>
-        <Menu data={menuFoodData.categories} />
+        <MenuCategory data={menuFoodData.categories} />
         <p className='mt-20 text-center text-primary-lighter text-subscript'>
           *{menuFoodData.sidenote}
         </p>

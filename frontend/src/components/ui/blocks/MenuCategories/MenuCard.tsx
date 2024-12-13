@@ -1,5 +1,5 @@
 'use client';
-import { IMenuCategory } from '@/utils/type/menu';
+import { IMenuCategory } from '@/utils/type/menus';
 import Image from 'next/image';
 import React from 'react';
 

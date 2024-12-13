@@ -6,7 +6,7 @@ const menuFoodCategory = menuFoodData.categories;
 export const menuHeaderData: MenuItem[] = [
   {
     name: 'Thực đơn',
-    url: '/menu',
+    url: '/menus',
     children: menuFoodCategory
   },
   {

@@ -7,7 +7,7 @@ export const heroSliderData: IHeroSliderItem[] = [
     img: Hero1,
     description: 'Trải nghiệm các món ăn ngon chuẩn vị, đa dạng văn hóa ẩm thực đến từ nhiều nơi khác nhau với những nguyên liệu được chọn lọc kỹ lưỡng.',
     link: {
-      url: '/menu',
+      url: '/menus',
       description: 'Khám phá thực đơn'
     }
   },

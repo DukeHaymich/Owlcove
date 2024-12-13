@@ -13,7 +13,7 @@ export default function Footer() {
             className='mx-auto mt-7'
           />
           <div className='mx-auto w-fit'>
-            <p className='mb-1'>Hoặc liên hệ với chúng tôi qua:</p>
+            <p className='mb-1'>Liên hệ với chúng tôi qua:</p>
             <MenuMedia />
           </div>
         </div>

@@ -6,3 +6,14 @@ export interface IMenuCategory {
   img?: StaticImageData | string;
   children?: IMenuCategory[];
 }
+
+interface IPriceList {
+  size: string;
+  price: number;
+}
+
+export interface IFood {
+  name: string;
+  priceTag: IPriceList[] | number;
+  category: string[];
+}

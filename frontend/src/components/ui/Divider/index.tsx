@@ -22,7 +22,7 @@ export default function Divider({ color = 'primary', animated = true }: IDivider
       ref={ref}
       className={clsx(
         'mx-auto mb-5 h-[58px] max-w-[640px] transition-all duration-[1.5s]',
-        animated || inView ? '[clip-path:inset(0)]' : '[clip-path:inset(0_100%)]'
+        !animated || inView ? '[clip-path:inset(0)]' : '[clip-path:inset(0_100%)]'
       )}>
       <Image
         src={HeroDivider}

@@ -16,7 +16,7 @@ export default function MenuGroup({ name, children, url = '', isPrimary = true }
   const Container = url.length > 0 ? Link : 'div';
   return (
     <div
-      className='relative h-10 w-full max-w-[196px] text-menu hover:bg-cream-300/95'
+      className='relative h-10 w-full max-w-[196px] cursor-pointer text-menu hover:bg-cream-300/95'
       onMouseEnter={() => setShowSubMenu(true)}
       onMouseLeave={() => setShowSubMenu(false)}>
       <Container
@@ -36,7 +36,7 @@ export default function MenuGroup({ name, children, url = '', isPrimary = true }
               <MenuItem
                 key={index}
                 {...item}
-                url={url + (item.url || '')}
+                url={item.url || ''}
                 isPrimary={false}
               />
             );
