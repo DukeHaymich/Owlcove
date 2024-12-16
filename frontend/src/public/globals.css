@@ -18,6 +18,11 @@ body {
   src: url(./fonts/OpenSans.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Lora';
+  src: url(./fonts/Lora.ttf) format('truetype');
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

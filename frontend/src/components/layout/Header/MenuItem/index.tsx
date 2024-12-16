@@ -1,8 +1,8 @@
-import { IMenuItem } from '@/utils/type/header';
+import { MenuItem as MenuItemType } from '@/utils/type/header';
 import MenuGroup from './MenuGroup';
 import MenuLink from './MenuLink';
 
-type IMenuItemProps = IMenuItem & {
+type IMenuItemProps = MenuItemType & {
   isPrimary?: boolean;
 };
 
