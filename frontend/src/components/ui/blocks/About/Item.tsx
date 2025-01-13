@@ -10,10 +10,10 @@ import BorderFrame from '@/public/images/frame.png';
 import { useInView } from 'react-intersection-observer';
 
 interface IItemProps extends IAboutItem {
-  imgPosition: 'left' | 'right';
+  imagePosition: 'left' | 'right';
 }
 
-export default function Item({ imgPosition, title, description, img }: IItemProps) {
+export default function Item({ imagePosition, title, description, image }: IItemProps) {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.5,
@@ -22,19 +22,19 @@ export default function Item({ imgPosition, title, description, img }: IItemProp
     <div
       className={clsx(
         'flex gap-10 content-view-box',
-        imgPosition === 'left' ? 'flex-row' : 'flex-row-reverse'
+        imagePosition === 'left' ? 'flex-row' : 'flex-row-reverse'
       )}>
       <div
         className={clsx(
           'relative flex-1 overflow-clip transition-all duration-700',
           inView
             ? 'opacity-100'
-            : imgPosition === 'left'
+            : imagePosition === 'left'
               ? '-translate-x-10 opacity-0'
               : 'translate-x-10 opacity-0'
         )}>
         <Image
-          src={img}
+          src={image}
           alt={title}
           fill
           className='object-cover object-center'

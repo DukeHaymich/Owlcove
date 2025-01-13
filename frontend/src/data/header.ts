@@ -1,13 +1,9 @@
-import { MenuItem } from "@/utils/type/header";
-import { menuFoodData } from "./menuFood";
-
-const menuFoodCategory = menuFoodData.categories;
+import { MenuItem } from '@/utils/type/header';
 
 export const menuHeaderData: MenuItem[] = [
   {
     name: 'Thực đơn',
     url: '/menus',
-    children: menuFoodCategory
   },
   {
     name: 'Tin tức',
@@ -30,12 +26,12 @@ export const menuHeaderData: MenuItem[] = [
     children: [
       {
         name: 'Đặt chỗ',
-        url: '/reservations'
+        url: '/reservations',
       },
       {
         name: 'Mang về',
-        url: '/take-away'
-      }
+        url: '/take-away',
+      },
     ],
   },
 ];

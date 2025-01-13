@@ -11,29 +11,30 @@ export const menuFoodData: IMenuFoodData = {
   description:
     'Chúng tôi mang đến bạn thực đơn đầy màu sắc hơn 70 món ăn đa dạng từ các nền ẩm thực nổi tiếng trên thế giới, được chế biến từ những nguyên liệu tươi ngon và chất lượng.',
   categories: [
-    {
-      name: 'Tổng hợp',
-      url: '/menus/full-course',
-      children: [
-        {
-          name: 'Khai vị',
-          url: '/menus/full-course/appetizers',
-        },
-        {
-          name: 'Món chính',
-          url: '/menus/full-course/main-course',
-        },
-        {
-          name: 'Tráng miệng',
-          url: '/menus/full-course/desserts',
-        },
-      ],
-    },
-    { name: 'Bữa sáng', url: '/menus/breakfast' },
+    // {
+    //   name: 'Tổng hợp',
+    //   url: '/menus/full-course',
+    //   children: [
+    //     {
+    //       name: 'Khai vị',
+    //       url: '/menus/full-course/appetizers',
+    //     },
+    //     {
+    //       name: 'Món chính',
+    //       url: '/menus/full-course/main-course',
+    //     },
+    //     {
+    //       name: 'Tráng miệng',
+    //       url: '/menus/full-course/desserts',
+    //     },
+    //   ],
+    // },
+    // { name: 'Bữa sáng', url: '/menus/breakfast' },
     { name: 'Thuần Việt', url: '/menus/vietnamese' },
     { name: 'Châu Âu', url: '/menus/european' },
     // { name: 'Đông Nam Á', url: '/menus/south-east-asian' },
     { name: 'Đông Á', url: '/menus/east-asian' },
+    { name: 'Đồ chay', url: '/menus/vegetarian' },
     { name: 'Món ăn nhanh', url: '/menus/fast-food' },
   ],
   sidenote: 'Thực đơn có thể thay đổi tùy theo sự kiện và chương trình đang áp dụng.',
