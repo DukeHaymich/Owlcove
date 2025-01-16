@@ -1,20 +1,38 @@
-import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
-
-dotenv.config();
+import express, { Express } from "express";
+import { connectDB } from "./configs/database";
 
 const app: Express = express();
-const port = process.env.PORT || 3000;
 
-app.get("/", (req: Request, res: Response) => {
-  console.log("Hello There!");
-  res.send("Hi!!!");
-});
+// Config
+dotenv.config();
+const port = process.env.PORT || 3005;
 
-import menuRouter from "./routes/menu";
-app.use('/menu', menuRouter);
+// Middleware
+app.use(express.json());
 
+// Routes
+import foodRouter from "./routes/foodRoutes";
+import categoryRouter from "./routes/categoryRoutes";
+import menusRouter from "./routes/menusRoutes";
+app.use("/food", foodRouter);
+app.use("/category", categoryRouter);
+app.use("/menus", menusRouter);
 
-app.listen(port, () => {
-  console.log(`[server]: Server is running at http://localhost:${port}`);
-});
+async function startServer() {
+  try {
+    let database = await connectDB();
+    if (database) {
+      console.log("[server]: Connected to MongoDB");
+      app.listen(port, () => {
+        console.log(`[server]: Server is running at http://localhost:${port}`);
+      });
+    } else {
+      console.log("[server]: Failed to connect to MongoDB");
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+startServer();

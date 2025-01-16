@@ -1,0 +1,512 @@
+[
+  {
+    "name": "Bánh mì thịt nướng",
+    "price": 20000,
+    "category": "Bữa điểm tâm",
+    "tags": ["Chất béo", "Chất đạm", "Chất xơ", "Tinh bột"]
+  },
+  {
+    "name": "Mì Quảng",
+    "price": 30000,
+    "category": "Bữa điểm tâm",
+    "tags": ["Chất béo", "Chất đạm", "Chất xơ", "Nước", "Tinh bột"]
+  },
+  {
+    "name": "Hủ tiếu Mỹ Tho",
+    "price": 40000,
+    "category": "Bữa điểm tâm",
+    "tags": ["Chất béo", "Chất đạm", "Chất xơ", "Nước", "Tinh bột"]
+  },
+  {
+    "name": "Bánh cuốn thịt nướng",
+    "price": 20000,
+    "category": "Bữa điểm tâm",
+    "tags": ["Chất béo", "Chất đạm", "Chất xơ", "Tinh bột"]
+  },
+  {
+    "name": "Hoành thánh xá xíu",
+    "price": 30000,
+    "category": "Bữa điểm tâm",
+    "tags": ["Chất béo", "Chất đạm", "Chất xơ", "Tinh bột"]
+  },
+  {
+    "name": "Phở bò",
+    "price": 30000,
+    "category": "Bữa điểm tâm",
+    "tags": ["Chất béo", "Chất đạm", "Chất xơ", "Nước", "Tinh bột"]
+  },
+  {
+    "name": "Bún bò Huế",
+    "price": 30000,
+    "category": "Bữa điểm tâm",
+    "tags": ["Chất béo", "Chất đạm", "Chất xơ", "Nước", "Tinh bột"]
+  },
+  {
+    "name": "Bánh ướt lòng gà",
+    "price": 30000,
+    "category": "Bữa điểm tâm",
+    "tags": ["Chất đạm", "Chất xơ", "Tinh bột"]
+  },
+  {
+    "name": "Bánh giò",
+    "price": 20000,
+    "category": "Bữa điểm tâm",
+    "tags": ["Chất đạm", "Tinh bột"]
+  },
+  {
+    "name": "Xôi gà",
+    "price": 25000,
+    "category": "Bữa điểm tâm",
+    "tags": ["Chất đạm", "Tinh bột"]
+  },
+  {
+    "name": "Bún mọc",
+    "price": 30000,
+    "category": "Bữa điểm tâm",
+    "tags": ["Chất béo", "Chất đạm", "Chất xơ", "Nước", "Tinh bột"]
+  },
+  {
+    "name": "Bún riêu cua",
+    "price": 25000,
+    "category": "Bữa điểm tâm",
+    "tags": ["Chất đạm", "Chất xơ", "Tinh bột"]
+  },
+  {
+    "name": "Súp cua",
+    "price": 40000,
+    "category": "Súp",
+    "tags": ["Chất đạm", "Nước"]
+  },
+  {
+    "name": "Súp tôm măng tây",
+    "price": 50000,
+    "category": "Súp",
+    "tags": ["Chất đạm", "Nước"]
+  },
+  {
+    "name": "Súp khoai tây hải sản",
+    "price": 40000,
+    "category": "Súp",
+    "tags": ["Chất đạm", "Nước", "Tinh bột"]
+  },
+  {
+    "name": "Súp kem bí đỏ tôm",
+    "price": 30000,
+    "category": "Súp",
+    "tags": ["Chất béo", "Chất đạm", "Chất xơ", "Nước"]
+  },
+  {
+    "name": "Súp gà hầm",
+    "price": 30000,
+    "category": "Súp",
+    "tags": ["Chất béo", "Chất đạm", "Nước"]
+  },
+  {
+    "name": "Salad gà nướng",
+    "price": 40000,
+    "category": "Salad",
+    "tags": ["Chất đạm", "Chất xơ"]
+  },
+  {
+    "name": "Salad trái cây hải sản",
+    "price": 50000,
+    "category": "Salad",
+    "tags": ["Chất đạm", "Chất xơ"]
+  },
+  {
+    "name": "Salad kiểu Nga",
+    "price": 50000,
+    "category": "Salad",
+    "tags": ["Chất đạm", "Chất xơ"]
+  },
+  {
+    "name": "Salad cá hồi xông khói",
+    "price": 50000,
+    "category": "Salad",
+    "tags": ["Chất đạm", "Chất xơ"]
+  },
+  {
+    "name": "Salad tổng hợp",
+    "price": 40000,
+    "category": "Salad",
+    "tags": ["Chất đạm", "Chất xơ"]
+  },
+  {
+    "name": "Trứng lòng đào sốt me",
+    "price": 20000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Chất béo", "Chất đạm"]
+  },
+  {
+    "name": "Sò điệp nướng phô mai",
+    "price": 60000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Chất béo", "Chất đạm"]
+  },
+  {
+    "name": "Bánh mì nướng bơ tỏi",
+    "price": 30000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Chất béo", "Tinh bột"]
+  },
+  {
+    "name": "Mực chiên xù",
+    "price": 40000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Chất béo", "Chất đạm"]
+  },
+  {
+    "name": "Khoai tây chiên",
+    "price": 20000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Tinh bột"]
+  },
+  {
+    "name": "Khoai tây lắc",
+    "price": 30000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Tinh bột"]
+  },
+  {
+    "name": "Bánh xèo",
+    "price": 30000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Chất béo", "Chất đạm", "Chất xơ", "Tinh bột"]
+  },
+  {
+    "name": "Chả giò",
+    "price": 30000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Chất béo", "Chất đạm", "Tinh bột"]
+  },
+  {
+    "name": "Cá viên chiên",
+    "price": 30000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Chất béo", "Chất đạm"]
+  },
+  {
+    "name": "Bò cuốn lá lốt",
+    "price": 30000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Chất béo", "Chất đạm", "Chất xơ"]
+  },
+  {
+    "name": "Cơm",
+    "price": 10000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Tinh bột"]
+  },
+  {
+    "name": "Bánh mì",
+    "price": 10000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Tinh bột"]
+  },
+  {
+    "name": "Bún khô",
+    "price": 10000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Tinh bột"]
+  },
+  {
+    "name": "Khoai tây hầm",
+    "price": 10000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Tinh bột"]
+  },
+  {
+    "name": "Mini salad sốt mayonnaise",
+    "price": 10000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Chất béo", "Chất xơ"]
+  },
+  {
+    "name": "Canh rong biển",
+    "price": 10000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Chất xơ", "Nước"]
+  },
+  {
+    "name": "Bánh khọt tôm",
+    "price": 30000,
+    "category": "Khai vị, Nhanh, Món thêm",
+    "tags": ["Chất béo", "Chất đạm", "Tinh bột"]
+  },
+  {
+    "name": "Bò hầm rượu vang (kèm bánh mì)",
+    "price": 70000,
+    "category": "Món chính",
+    "tags": ["Chất béo", "Chất đạm", "Tinh bột"]
+  },
+  {
+    "name": "Bò bít tết",
+    "price": 70000,
+    "category": "Món chính",
+    "tags": ["Chất béo", "Chất đạm"]
+  },
+  {
+    "name": "Bò né (kèm bánh mì)",
+    "price": 70000,
+    "category": "Món chính",
+    "tags": ["Chất béo", "Chất đạm", "Tinh bột"]
+  },
+  {
+    "name": "Cánh gà chiên sốt me",
+    "price": 70000,
+    "category": "Món chính",
+    "tags": ["Chất béo", "Chất đạm"]
+  },
+  {
+    "name": "Cơm tỏi bò lúc lắc",
+    "price": 70000,
+    "category": "Món chính",
+    "tags": ["Chất béo", "Chất đạm", "Tinh bột"]
+  },
+  {
+    "name": "Cơm gà xé",
+    "price": 60000,
+    "category": "Món chính",
+    "tags": ["Chất béo", "Chất đạm", "Tinh bột"]
+  },
+  {
+    "name": "Cơm sườn (sốt chua ngọt)",
+    "price": 50000,
+    "category": "Món chính",
+    "tags": ["Chất béo", "Chất đạm", "Tinh bột"]
+  },
+  {
+    "name": "Cơm bắp bò",
+    "price": 70000,
+    "category": "Món chính",
+    "tags": ["Chất béo", "Chất đạm", "Tinh bột"]
+  },
+  {
+    "name": "Mì Ý gà sốt kem nấm",
+    "price": 70000,
+    "category": "Món chính",
+    "tags": ["Chất béo", "Chất đạm", "Tinh bột"]
+  },
+  {
+    "name": "Mì Ý thịt bò bằm",
+    "price": 70000,
+    "category": "Món chính",
+    "tags": ["Chất béo", "Chất đạm", "Tinh bột"]
+  },
+  {
+    "name": "Tempura hải sản",
+    "price": 70000,
+    "category": "Món chính",
+    "tags": ["Chất béo", "Chất đạm", "Chất xơ", "Tinh bột"]
+  },
+  {
+    "name": "Cà ri gà",
+    "price": 70000,
+    "category": "Món chính",
+    "tags": ["Chất béo", "Chất đạm", "Tinh bột"]
+  },
+  {
+    "name": "Cơm đậu hũ nhồi thịt",
+    "price": 60000,
+    "category": "Món chính",
+    "tags": ["Chất béo", "Chất đạm", "Tinh bột"]
+  },
+  {
+    "name": "Gỏi đu đủ hoa chuối",
+    "price": 30000,
+    "category": "Thuần chay",
+    "tags": ["Chất xơ"]
+  },
+  {
+    "name": "Gỏi dưa leo",
+    "price": 20000,
+    "category": "Thuần chay",
+    "tags": ["Chất xơ"]
+  },
+  {
+    "name": "Gỏi rong biển",
+    "price": 30000,
+    "category": "Thuần chay",
+    "tags": ["Chất xơ"]
+  },
+  {
+    "name": "Gỏi tàu hũ ky nấm đùi gà",
+    "price": 30000,
+    "category": "Thuần chay",
+    "tags": ["Chất đạm", "Chất xơ"]
+  },
+  {
+    "name": "Cà tím rim nước tương",
+    "price": 20000,
+    "category": "Thuần chay",
+    "tags": ["Chất xơ"]
+  },
+  {
+    "name": "Chả giò chay",
+    "price": 20000,
+    "category": "Thuần chay",
+    "tags": ["Chất xơ"]
+  },
+  {
+    "name": "Kim chi cải thảo",
+    "price": 20000,
+    "category": "Thuần chay",
+    "tags": ["Chất xơ"]
+  },
+  {
+    "name": "Bún nấm",
+    "price": 50000,
+    "category": "Thuần chay",
+    "tags": ["Chất xơ", "Tinh bột"]
+  },
+  {
+    "name": "Đậu hũ sốt cà chua",
+    "price": 30000,
+    "category": "Thuần chay",
+    "tags": ["Chất xơ", "Tinh bột"]
+  },
+  {
+    "name": "Súp thập cẩm chay",
+    "price": 40000,
+    "category": "Thuần chay",
+    "tags": ["Chất xơ", "Tinh bột", "Nước"]
+  },
+  {
+    "name": "Chả đậu xanh",
+    "price": 30000,
+    "category": "Thuần chay",
+    "tags": ["Chất xơ", "Tinh bột"]
+  },
+  {
+    "name": "Miến xào nấm",
+    "price": 40000,
+    "category": "Thuần chay",
+    "tags": ["Chất đạm", "Chất xơ", "Tinh bột"]
+  },
+  {
+    "name": "Há cảo chay",
+    "price": 40000,
+    "category": "Thuần chay",
+    "tags": ["Chất đạm", "Chất xơ", "Tinh bột"]
+  },
+  {
+    "name": "Mì xào đọt sen",
+    "price": 40000,
+    "category": "Thuần chay",
+    "tags": ["Chất đạm", "Chất xơ", "Tinh bột"]
+  },
+  {
+    "name": "Chè nếp cẩm",
+    "price": 15000,
+    "category": "Tráng miệng",
+    "tags": []
+  },
+  {
+    "name": "Panna cotta quả mọng",
+    "price": 50000,
+    "category": "Tráng miệng",
+    "tags": []
+  },
+  {
+    "name": "Bánh flan",
+    "price": 30000,
+    "category": "Tráng miệng",
+    "tags": []
+  },
+  {
+    "name": "Cheesecake",
+    "price": 40000,
+    "category": "Tráng miệng",
+    "tags": []
+  },
+  {
+    "name": "Tiramisu",
+    "price": 50000,
+    "category": "Tráng miệng",
+    "tags": []
+  },
+  {
+    "name": "Cà phê đen",
+    "price": 30000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Cà phê sữa",
+    "price": 30000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Bạc xỉu",
+    "price": 30000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Nước ép thơm",
+    "price": 30000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Nước ép táo",
+    "price": 30000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Dâu xay",
+    "price": 35000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Dừa tươi",
+    "price": 30000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Trà chanh",
+    "price": 20000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Trà đào cam sả",
+    "price": 25000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Hồng trà",
+    "price": 25000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Trà lài",
+    "price": 25000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Trà vải",
+    "price": 25000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Trà vải",
+    "price": 25000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Nước ngọt dạng lon các loại (Pepsi, CocaCola, 7Up, Sprite)",
+    "price": 20000,
+    "category": "Thức uống",
+    "tags": []
+  }
+]

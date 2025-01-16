@@ -1,4 +1,4 @@
-import { numericSummaryData } from '@/data/numericsummary';
+import { numericSummaryData } from '@/data/miscellaneous';
 import React from 'react';
 import SummaryItem from './SummaryItem';
 import Image from 'next/image';
