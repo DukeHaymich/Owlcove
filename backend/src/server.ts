@@ -12,7 +12,11 @@ const port = process.env.PORT || 3005;
 app.use(express.json());
 
 // Routes
+import foodRouter from "./routes/foodRoutes";
+import categoryRouter from "./routes/categoryRoutes";
 import menusRouter from "./routes/menusRoutes";
+app.use("/food", foodRouter);
+app.use("/category", categoryRouter);
 app.use("/menus", menusRouter);
 
 async function startServer() {

@@ -12,6 +12,7 @@ const foodSchema = new mongoose.Schema(
     },
     category: {
       type: String,
+      ref: "Category",
       required: true,
     },
     tags: {
@@ -21,11 +22,6 @@ const foodSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    // methods: {
-    //   findByCategory(category: string) {
-    //     return mongoose.model("Food").find({ category: category });
-    //   },
-    // }
   }
 );
 
