@@ -1,9 +1,9 @@
-import { StaticImageData } from "next/image";
+import { StaticImageData } from 'next/image';
 
 export interface IMenuCategory {
   name: string;
   url: string;
-  img?: StaticImageData | string;
+  image?: StaticImageData | string;
   children?: IMenuCategory[];
 }
 

@@ -1,12 +1,12 @@
-import { StaticImageData } from "next/image";
+import { StaticImageData } from 'next/image';
 
 export interface ILink {
-  url: string,
-  description: string
+  url: string;
+  description: string;
 }
 
 export interface IHeroSliderItem {
-  img: StaticImageData | string;
+  image: StaticImageData | string;
   description: string;
   link: ILink;
 }
@@ -19,8 +19,8 @@ export interface INumericSummaryItem {
   prefixNumericData?: string;
   suffixNumericData?: string;
 }
- export interface IAboutItem {
+export interface IAboutItem {
   title: string;
   description: string;
-  img: StaticImageData | string
- }
+  image: StaticImageData | string;
+}

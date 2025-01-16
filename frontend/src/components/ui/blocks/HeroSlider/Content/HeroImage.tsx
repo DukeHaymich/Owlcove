@@ -20,7 +20,7 @@ export default function HeroImage({ data, ...carouselProps }: IHeroImageProps) {
               className='bg-dark !pl-0'>
               <div className='h-full w-full'>
                 <Image
-                  src={item.img}
+                  src={item.image}
                   alt='hero-image'
                   className='h-full w-full object-cover blur-sm brightness-50'
                 />

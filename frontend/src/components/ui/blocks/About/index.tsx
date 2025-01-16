@@ -9,7 +9,7 @@ export default function About() {
         return (
           <Item
             key={index}
-            imgPosition={index % 2 !== 0 ? 'left' : 'right'}
+            imagePosition={index % 2 !== 0 ? 'left' : 'right'}
             {...item}
           />
         );

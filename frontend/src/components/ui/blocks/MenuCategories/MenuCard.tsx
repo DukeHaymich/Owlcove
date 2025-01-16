@@ -30,7 +30,7 @@ export default function MenuCard({ className, data }: IMenuCardProps) {
       )}>
       <div className='relative mb-2.5 aspect-screen w-full overflow-hidden'>
         <Image
-          src={data.img ?? PlaceholderImage}
+          src={data.image ?? PlaceholderImage}
           alt={data.name}
           className='h-full w-full object-cover object-center transition-all duration-500 group-hover/menu-card:scale-105'
         />
