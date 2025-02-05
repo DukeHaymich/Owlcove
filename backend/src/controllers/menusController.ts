@@ -12,7 +12,7 @@ interface IMenu {
 async function getFoodGroupByCategory(request: Request, response: Response) {
   try {
     // Set up menu by categories
-    let categoryList = await Category.find({});
+    let categoryList = await Category.find({}).sort({ order: 1 });
     const categoryToIndexMap = new Map();
     let menus: IMenu[] = categoryList.map((category: any, index: number) => {
       categoryToIndexMap.set(category.name, index);
