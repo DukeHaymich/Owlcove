@@ -354,6 +354,12 @@
     "tags": ["Chất xơ"]
   },
   {
+    "name": "Rau củ hầm",
+    "price": 40000,
+    "category": "Thuần chay",
+    "tags": ["Chất xơ"]
+  },
+  {
     "name": "Bún nấm",
     "price": 50000,
     "category": "Thuần chay",
@@ -500,6 +506,30 @@
   {
     "name": "Trà vải",
     "price": 25000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Soda bạc hà",
+    "price": 30000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Soda chanh",
+    "price": 30000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Soda việt quất",
+    "price": 30000,
+    "category": "Thức uống",
+    "tags": []
+  },
+  {
+    "name": "Soda dâu",
+    "price": 30000,
     "category": "Thức uống",
     "tags": []
   },
