@@ -12,7 +12,10 @@ interface IDescriptionProps extends ComponentProps<typeof Carousel> {
 export default function Description({ data, ...carouselProps }: IDescriptionProps) {
   return (
     <div className='absolute left-1/2 top-1/2 mx-0 w-full -translate-x-1/2 -translate-y-1/2 content-view-box'>
-      <Divider color='cream' />
+      <Divider
+        animated
+        color='cream'
+      />
       <Carousel {...carouselProps}>
         <CarouselContainer>
           {data.map((item, index) => {

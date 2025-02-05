@@ -27,7 +27,7 @@ export default function MenuGroup({ name, children, url = '', isPrimary = true }
       <div
         className={clsx(
           'absolute h-fit pt-3',
-          showSubMenu ? 'block' : 'hidden',
+          showSubMenu ? '' : 'hidden',
           isPrimary ? 'top-full' : '-top-3 left-full pl-1'
         )}>
         <div className='w-[196px] rounded-md bg-cream-200/95 first:*:rounded-t-md last:*:rounded-b-md'>

@@ -6,7 +6,7 @@ import ContactInfo from './ContactInfo';
 import { useInView } from 'react-intersection-observer';
 
 export default function Reservation() {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.75 });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.5 });
 
   return (
     <section

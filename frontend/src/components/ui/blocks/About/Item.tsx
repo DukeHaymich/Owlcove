@@ -16,7 +16,7 @@ interface IItemProps extends IAboutItem {
 export default function Item({ imagePosition, title, description, image }: IItemProps) {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 0.2,
   });
   return (
     <div

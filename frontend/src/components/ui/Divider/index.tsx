@@ -12,7 +12,7 @@ interface IDividerProps extends VariantProps<typeof dividerClasses> {
   animated?: boolean;
 }
 
-export default function Divider({ color = 'primary', animated = true }: IDividerProps) {
+export default function Divider({ color = 'primary', animated = false }: IDividerProps) {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0,

@@ -1,19 +1,20 @@
-import { StaticImageData } from 'next/image';
-
-export interface IMenuCategory {
+export interface ICategoryImage {
   name: string;
-  url: string;
-  image?: StaticImageData | string;
-  children?: IMenuCategory[];
+  dataBase64: string;
+  contentType: string;
 }
 
-interface IPriceList {
-  size: string;
-  price: number;
+export interface ICategory {
+  name: string;
+  image: ICategoryImage;
 }
 
 export interface IFood {
   name: string;
-  priceTag: IPriceList[] | number;
-  category: string[];
+  price: number;
+  tags: string[];
+}
+
+export interface IFoodCategory extends ICategory {
+  foods: IFood[];
 }

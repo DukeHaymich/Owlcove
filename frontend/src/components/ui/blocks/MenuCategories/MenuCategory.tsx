@@ -1,9 +1,9 @@
-import { IMenuCategory } from '@/utils/type/menus';
+import { ICategory } from '@/utils/type/menus';
 import MenuCard from './MenuCard';
 import React from 'react';
 
 interface IMenuCardProps {
-  data: IMenuCategory[];
+  data: ICategory[];
 }
 
 export default function MenuCategory({ data }: IMenuCardProps) {

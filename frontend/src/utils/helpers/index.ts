@@ -1,5 +1,3 @@
-import { format_phone_number } from "./format_phone_number";
+import { formatPhoneNumber } from './formatPhoneNumber';
 
-export {
-  format_phone_number
-}
+export { formatPhoneNumber };

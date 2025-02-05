@@ -28,7 +28,7 @@ export default {
           DEFAULT: '#FFEFD5',
           100: '#FFEFD5',
           200: '#FEE4B5',
-          300: '#FFD173'
+          300: '#FFD173',
         },
         vintage: '#E4C482',
         dark: '#121212',
@@ -40,82 +40,88 @@ export default {
       fontFamily: {
         sans: ['Open Sans', 'sans-serif'],
         serif: ['Lora', 'serif'],
-        label: ['Montserrat', 'sans-serif']
+        label: ['Montserrat', 'sans-serif'],
       },
       fontSize: {
         numeric: '2.875rem',
       },
       height: {
-        content: 'calc(100vh - 2.5rem)'
+        content: 'calc(100vh - 2.5rem)',
       },
       width: {
-        content: '1072px'
+        content: '1072px',
       },
       maxWidth: {
-        content: '1072px'
+        content: '1072px',
       },
       aspectRatio: {
         screen: '4 / 3',
       },
       zIndex: {
         header: '100',
-        'skip-navigation': '110'
+        'skip-navigation': '110',
       },
       transitionDelay: {
-        '250': '250ms'
+        '250': '250ms',
       },
       animation: {
-        "fade-in": 'fade-in 1s ease-out forwards',
+        'fade-in': 'fade-in 1s ease-out forwards',
       },
       keyframes: {
-        "fade-in": {
+        'fade-in': {
           '0%': {
             opacity: '0',
           },
           '100%': {
             opacity: '1',
-          }
+          },
         },
-      }
+      },
     },
   },
   plugins: [
-    plugin(function({ addUtilities }) {
+    plugin(function ({ addUtilities }) {
       addUtilities({
         '.content-view-box': {
-          '@apply max-w-content px-8 mx-auto': {}
+          '@apply max-w-content px-8 mx-auto': {},
+        },
+        '.clearfix': {
+          '@apply after:block after:content-[""] after:clear-both': {},
         },
         '.text-menu': {
-          '@apply text-nowrap font-label font-semibold text-primary text-center': {}
+          '@apply text-nowrap font-label font-semibold text-primary text-center': {},
         },
         '.text-slider': {
-          '@apply text-center font-sans text-3xl font-normal leading-normal text-cream': {}
+          '@apply text-center font-sans text-3xl font-normal leading-normal text-cream': {},
         },
         '.text-statistic': {
-          '@apply text-numeric text-primary font-medium': {}
+          '@apply text-numeric text-primary font-medium': {},
         },
         '.text-body': {
-          '@apply whitespace-pre-wrap text-justify leading-relaxed tracking-wide word-wide': {}
+          '@apply whitespace-pre-wrap text-justify leading-relaxed tracking-wide word-wide': {},
         },
         '.text-heading': {
-          '@apply text-4xl tracking-tight font-medium': {}
+          '@apply text-4xl tracking-tight font-semibold': {},
         },
         '.text-heading-2': {
-          '@apply text-2xl font-medium': {}
+          '@apply text-2xl font-medium': {},
+        },
+        '.text-heading-3': {
+          '@apply text-xl font-semibold': {},
         },
         '.text-subscript': {
-          '@apply text-sm font-light font-sans italic': {}
+          '@apply text-sm font-light font-sans italic': {},
         },
         '.bg-linear-1': {
-          '@apply from-cream to-cream-200': {}
+          '@apply from-cream to-cream-200': {},
         },
         '.mask-color-primary': {
-          '@apply drop-shadow-mask-primary translate-y-[-1000px]': {}
+          '@apply drop-shadow-mask-primary translate-y-[-1000px]': {},
         },
         '.mask-color-cream': {
-          '@apply drop-shadow-mask-cream translate-y-[-1000px]': {}
-        }
-      })
+          '@apply drop-shadow-mask-cream translate-y-[-1000px]': {},
+        },
+      });
     }),
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
@@ -133,15 +139,15 @@ export default {
           }),
         },
         { values: theme('transitionDelay') }
-      )
+      );
       matchUtilities(
         {
-          'word': (value) => ({
+          word: (value) => ({
             wordSpacing: value,
           }),
         },
         { values: theme('letterSpacing') }
-      )
+      );
     }),
   ],
 } satisfies Config;

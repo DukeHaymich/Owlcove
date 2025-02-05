@@ -4,7 +4,7 @@ import Image from 'next/image';
 import LocationIcon from '@/public/images/svg/location-icon.svg';
 import PhoneIcon from '@/public/images/svg/phone-icon.svg';
 import { IContactItem } from '@/utils/type/footer';
-import { format_phone_number } from '@/utils/helpers';
+import { formatPhoneNumber } from '@/utils/helpers';
 
 type ContactItemProps = IContactItem & {
   index: number;
@@ -28,7 +28,7 @@ export default function ContactItem({ address, phone, index }: ContactItemProps)
           alt='phone-icon'
           className='float-left mr-1'
         />
-        <p className='overflow-hidden align-middle tracking-wide'>{format_phone_number(phone)}</p>
+        <p className='overflow-hidden align-middle tracking-wide'>{formatPhoneNumber(phone)}</p>
       </div>
     </div>
   );

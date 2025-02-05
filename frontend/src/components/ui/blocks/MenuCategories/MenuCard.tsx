@@ -1,5 +1,5 @@
 'use client';
-import { IMenuCategory } from '@/utils/type/menus';
+import { ICategory } from '@/utils/type/menus';
 import Image from 'next/image';
 import React from 'react';
 
@@ -7,21 +7,27 @@ import PlaceholderImage from '@/public/images/food-placeholder.png';
 import { useInView } from 'react-intersection-observer';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { dataURI } from '@/utils/helpers/imageHandler';
 
 interface IMenuCardProps {
   className?: string;
-  data: IMenuCategory;
+  data: ICategory;
 }
 
 export default function MenuCard({ className, data }: IMenuCardProps) {
   const [ref, inView] = useInView({
     triggerOnce: true,
+    rootMargin: '100px 0px',
     threshold: 0,
   });
 
+  const imageSrc = data.image.dataBase64
+    ? dataURI(data.image.contentType, data.image.dataBase64)
+    : PlaceholderImage;
+
   return (
     <Link
-      href={data.url}
+      href={'/menus/#' + data.name}
       ref={ref}
       className={clsx(
         className,
@@ -30,8 +36,9 @@ export default function MenuCard({ className, data }: IMenuCardProps) {
       )}>
       <div className='relative mb-2.5 aspect-screen w-full overflow-hidden'>
         <Image
-          src={data.image ?? PlaceholderImage}
+          src={imageSrc}
           alt={data.name}
+          fill
           className='h-full w-full object-cover object-center transition-all duration-500 group-hover/menu-card:scale-105'
         />
       </div>
