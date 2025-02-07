@@ -21,7 +21,7 @@ export default function MenuCard({ className, data }: IMenuCardProps) {
     threshold: 0,
   });
 
-  const imageSrc = data.image.dataBase64
+  const imageSrc = data.image?.dataBase64
     ? dataURI(data.image.contentType, data.image.dataBase64)
     : PlaceholderImage;
 
