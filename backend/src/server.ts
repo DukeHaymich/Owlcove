@@ -9,15 +9,12 @@ dotenv.config();
 const port = process.env.PORT || 3005;
 
 // Middleware
-app.use(express.json());
+import middlewares from "./middlewares";
+middlewares(app);
 
 // Routes
-import foodRouter from "./routes/foodRoutes";
-import categoryRouter from "./routes/categoryRoutes";
-import menusRouter from "./routes/menusRoutes";
-app.use("/food", foodRouter);
-app.use("/category", categoryRouter);
-app.use("/menus", menusRouter);
+import routes from "./routes";
+routes(app);
 
 async function startServer() {
   try {
@@ -32,6 +29,7 @@ async function startServer() {
     }
   } catch (err) {
     console.log(err);
+    process.exit(1);
   }
 }
 
