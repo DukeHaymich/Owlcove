@@ -8,7 +8,7 @@ export default async function Menu() {
   const menuCategories: IFoodCategory[] = await menuApi().getMenus();
 
   return (
-    <section className='pt-28 content-view-box'>
+    <section className='content-view-box'>
       <Divider />
       <h1 className='mb-5 text-center font-serif text-primary text-heading'>Thực đơn</h1>
       <div className='mx-auto mb-10 h-px w-1/6 bg-primary' />
