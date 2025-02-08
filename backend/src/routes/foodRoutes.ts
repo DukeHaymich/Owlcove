@@ -1,7 +1,7 @@
-import express, { Router, Request, Response, NextFunction } from "express";
+import { Router } from "express";
 import FoodController from "../controllers/foodController";
 
-const router: Router = express.Router();
+const router: Router = Router();
 
 // router.get("/", (req: Request, res: Response) => {
 //   res.send("MENU");
