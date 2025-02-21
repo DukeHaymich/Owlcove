@@ -1,13 +1,17 @@
 import mongoose from "mongoose";
 
-const reservationSlotSchema = new mongoose.Schema({
+export interface IReservationSlot {
+  time: string;
+}
+
+const reservationSlotSchema = new mongoose.Schema<IReservationSlot>({
   time: {
     type: String,
     required: true,
   },
 });
 
-const ReservationSlot = mongoose.model(
+const ReservationSlot = mongoose.model<IReservationSlot>(
   "ReservationSlot",
   reservationSlotSchema
 );

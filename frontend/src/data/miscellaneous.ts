@@ -23,4 +23,7 @@ const numericSummaryData: INumericSummaryItem[] = [
 
 const openHours = '05:45 - 23:30 hằng ngày';
 
-export { openHours, numericSummaryData };
+const maxGuestsPerTable = 8;
+const maxTable = 2;
+
+export { openHours, numericSummaryData, maxGuestsPerTable, maxTable };

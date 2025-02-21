@@ -1,6 +1,18 @@
 import mongoose from "mongoose";
 
-const categoryImageSchema = new mongoose.Schema({
+interface ICategoryImage {
+  name: string;
+  dataBase64: string;
+  contentType: string;
+}
+
+export interface ICategory {
+  order: number;
+  name: string;
+  image?: ICategoryImage;
+}
+
+const categoryImageSchema = new mongoose.Schema<ICategoryImage>({
   name: {
     type: String,
     required: [true, "Please add a name"],
@@ -15,7 +27,7 @@ const categoryImageSchema = new mongoose.Schema({
   },
 });
 
-const categorySchema = new mongoose.Schema({
+const categorySchema = new mongoose.Schema<ICategory>({
   order: {
     type: Number,
     required: true,
@@ -30,6 +42,6 @@ const categorySchema = new mongoose.Schema({
   },
 });
 
-const Category = mongoose.model("Category", categorySchema);
+const Category = mongoose.model<ICategory>("Category", categorySchema);
 
 export default Category;

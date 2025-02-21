@@ -2,40 +2,49 @@ import { Request, Response } from "express";
 import mongoose from "mongoose";
 import ReservationSlot from "../models/reservationSlotModel";
 import Reservation from "../models/reservationModel";
+import {
+  getOccupiedSlotCount,
+  getSlotsMetaData,
+} from "../services/reservation";
+import { miscellaneous } from "../data/miscellaneous";
 
-async function postReservation(request: Request, response: Response) {
+async function post(request: Request, response: Response) {
   try {
-    const reservation = request.body;
+    /// TODO: validate request's body
+    // Check for slot availability
+    const occupiedSlotCount = await getOccupiedSlotCount(
+      request.body.date,
+      request.body.time,
+      request.body.branch
+    );
+    if (occupiedSlotCount >= miscellaneous.maxTable) {
+      response.status(400).json({ message: "Out of table for this time" });
+      return;
+    }
+    // Create a reservation
+    const reservation = await Reservation.create(request.body);
+    response
+      .status(200)
+      .json({ message: "Reservation created successfully", data: reservation });
+  } catch (err: any) {
+    response.status(500).json({ message: err.message });
+  }
+}
+
+async function getByDateAndBranch(request: Request, response: Response) {
+  try {
+    const { date, branch } = request.query;
+    const reservation = await Reservation.find({ date: date, branch: branch });
     response.status(200).json(reservation);
   } catch (err: any) {
     response.status(500).json({ message: err.message });
   }
 }
 
-async function getReservationByDate(request: Request, response: Response) {
+async function getSlots(_: Request, response: Response) {
   try {
-    const date = new Date(request.params.date as string);
-    const reservation = await Reservation.find({ date: date });
-    response.status(200).json(reservation);
-  } catch (err: any) {
-    response.status(500).json({ message: err.message });
-  }
-}
-
-async function getSlots(request: Request, response: Response) {
-  try {
-    const slots = await ReservationSlot.find({});
-    // Data flattening & sorting
-    const returnSlots = slots
-      .map((slot: any) => {
-        return slot.time;
-      })
-      .sort(
-        (a, b) =>
-          new Date("1/1/2000 " + a).valueOf() -
-          new Date("1/1/2000 " + b).valueOf()
-      );
-    response.status(200).json(returnSlots);
+    const slotData = await getSlotsMetaData();
+    response.status(200).json(slotData);
   } catch (err: any) {
     response.status(500).json({ message: err.message });
   }
@@ -55,9 +64,10 @@ async function postSlots(request: Request, response: Response) {
       session: session,
     });
     await session.commitTransaction();
-    response
-      .status(200)
-      .json({ message: "Slots created/overrided successfully!" });
+    response.status(200).json({
+      message: "Slots created/overrided successfully!",
+      data: reservationSlots,
+    });
   } catch (err: any) {
     await session.abortTransaction();
     response.status(500).json({ message: err.message });
@@ -65,8 +75,8 @@ async function postSlots(request: Request, response: Response) {
 }
 
 export default {
-  postReservation,
-  getReservationByDate,
+  post,
+  getByDateAndBranch,
   getSlots,
   postSlots,
 };

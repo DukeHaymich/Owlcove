@@ -1,22 +1,21 @@
-'use client';
-
 import { Button } from '@/components/common/Button';
 import { Input } from '@/components/common/Input';
 import { Select, SelectOption } from '@/components/common/Select';
 import { Textarea } from '@/components/common/Textarea';
-import { footerData } from '@/data/footer';
+import { maxGuestsPerTable } from '@/data/miscellaneous';
+import { reservationApi } from '@/services/reservationApi';
+import { IContactItem } from '@/utils/type/footer';
 import { IReservationForm } from '@/utils/type/reservation';
 import clsx from 'clsx';
-import React, { useMemo } from 'react';
 import { useForm } from 'react-hook-form';
-
-const locationData = footerData.locations;
 
 interface IFormProps {
   inView: boolean;
+  locationData: IContactItem[];
+  timeSlots: string[];
 }
 
-export default function Form({ inView }: IFormProps) {
+export default function Form({ inView, locationData, timeSlots }: IFormProps) {
   const {
     handleSubmit,
     register,
@@ -28,14 +27,12 @@ export default function Form({ inView }: IFormProps) {
     },
   });
 
-  const onSubmit = (data: IReservationForm) => {
-    console.log(data);
+  const onSubmit = async (data: IReservationForm) => {
+    await reservationApi().postReservation(data);
+    console.log('Sent:', data);
   };
 
-  const today = useMemo(() => {
-    const date = new Date();
-    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-  }, []);
+  const today = new Date().toISOString().split('T')[0];
 
   // console.log('OKaY');
   // console.log(watch('name'));
@@ -51,7 +48,7 @@ export default function Form({ inView }: IFormProps) {
           'col-span-5 transition-all duration-500',
           inView ? 'opacity-100' : 'opacity-0 -translate-x-10'
         )}
-        {...register('name', { required: true, minLength: 2 })}
+        {...register('name', { required: true, minLength: 4 })}
       />
       <Input
         type='tel'
@@ -65,21 +62,38 @@ export default function Form({ inView }: IFormProps) {
       <Input
         type='date'
         label='Ngày hẹn'
+        min={today}
+        defaultValue={today}
         containerClassName={clsx(
-          'col-span-3 transition-all duration-500 delay-150',
+          'col-span-4 transition-all duration-500 delay-150',
           inView ? 'opacity-100' : 'opacity-0 -translate-x-10'
         )}
         {...register('date', { required: true, min: today })}
       />
-      <Input
-        type='time'
+      <Select
         label='Thời gian'
         containerClassName={clsx(
-          'col-span-3 transition-all duration-500 delay-150',
+          'col-span-2 transition-all duration-500 delay-150',
           inView ? 'opacity-100' : 'opacity-0 -translate-x-10'
         )}
-        {...register('time', { required: true })}
-      />
+        defaultValue=''
+        {...register('time', { required: true, pattern: /^(?!\s*$).+/ })}>
+        <SelectOption
+          disabled
+          value=''
+          className='hidden'>
+          --:--
+        </SelectOption>
+        {timeSlots.map((item, index) => {
+          return (
+            <SelectOption
+              key={index}
+              value={item}>
+              {item}
+            </SelectOption>
+          );
+        })}
+      </Select>
       <Input
         type='number'
         label='Số lượng khách'
@@ -87,7 +101,7 @@ export default function Form({ inView }: IFormProps) {
           'col-span-3 transition-all duration-500 delay-150',
           inView ? 'opacity-100' : 'opacity-0 -translate-x-10'
         )}
-        {...register('customerCount', { required: true, min: 1 })}
+        {...register('customerCount', { required: true, min: 1, max: maxGuestsPerTable })}
       />
       <Select
         label='Địa điểm'

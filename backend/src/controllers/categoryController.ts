@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import Category from "../models/categoryModel";
 import mongoose from "mongoose";
-import { synthesize } from "../services/category";
+import { aggregate } from "../services/category";
 
 async function getAll(request: Request, response: Response) {
   try {
@@ -21,7 +21,7 @@ async function postOverride(request: Request, response: Response) {
     if (!files) {
       throw new Error("No files uploaded");
     }
-    let processedCategory = synthesize(categoriesList, files);
+    let processedCategory = aggregate(categoriesList, files);
     await Category.deleteMany({}, { session: session });
     const categoryDocuments = await Category.insertMany(processedCategory, {
       session: session,

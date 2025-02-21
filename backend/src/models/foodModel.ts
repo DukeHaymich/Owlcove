@@ -1,6 +1,13 @@
 import mongoose from "mongoose";
 
-const foodSchema = new mongoose.Schema(
+export interface IFood {
+  name: string;
+  price: number;
+  category: string;
+  tags: string[];
+}
+
+const foodSchema = new mongoose.Schema<IFood>(
   {
     name: {
       type: String,
@@ -25,6 +32,6 @@ const foodSchema = new mongoose.Schema(
   }
 );
 
-const Food = mongoose.model("Food", foodSchema);
+const Food = mongoose.model<IFood>("Food", foodSchema);
 
 export default Food;
