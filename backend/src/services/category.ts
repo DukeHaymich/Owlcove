@@ -1,4 +1,4 @@
-function synthesize(categoriesList: string[], imagesList: any) {
+function aggregate(categoriesList: string[], imagesList: any) {
   if (categoriesList.length !== imagesList.length) {
     throw new Error("Categories and images list length mismatch");
   }
@@ -17,4 +17,4 @@ function synthesize(categoriesList: string[], imagesList: any) {
   return result;
 }
 
-export { synthesize };
+export { aggregate };

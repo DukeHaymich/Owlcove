@@ -1,6 +1,16 @@
 import mongoose from "mongoose";
 
-const reservationSchema = new mongoose.Schema({
+export interface IReservation {
+  name: string;
+  phone: string;
+  date: string;
+  time: string;
+  branch: string;
+  customerCount: number;
+  note?: string;
+}
+
+const reservationSchema = new mongoose.Schema<IReservation>({
   name: {
     type: String,
     required: [true, "Please add a name"],
@@ -30,6 +40,9 @@ const reservationSchema = new mongoose.Schema({
   },
 });
 
-const Reservation = mongoose.model("reservation", reservationSchema);
+const Reservation = mongoose.model<IReservation>(
+  "reservation",
+  reservationSchema
+);
 
 export default Reservation;

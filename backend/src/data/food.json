@@ -126,6 +126,12 @@
     "tags": ["Chất đạm", "Chất xơ"]
   },
   {
+    "name": "Salad trứng gà",
+    "price": 40000,
+    "category": "Salad",
+    "tags": ["Chất đạm", "Chất xơ"]
+  },
+  {
     "name": "Salad tổng hợp",
     "price": 40000,
     "category": "Salad",
