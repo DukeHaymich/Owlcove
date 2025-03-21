@@ -1,21 +1,23 @@
 import { NextFunction, Request, Response } from "express";
-import jwt from "jsonwebtoken";
+import { verifyAccessToken } from "../services/auth";
 
-interface AuthenticateInfoRequest extends Request {
-  user?: any;
+declare module "express-serve-static-core" {
+  interface Request {
+    user?: any;
+  }
 }
 
 export function authenticateToken(
-  request: AuthenticateInfoRequest,
+  request: Request,
   response: Response,
   next: NextFunction
 ) {
-  const token = request.headers["authorization"]?.split(" ")[1];
-  if (!token) {
+  const accessToken = request.headers["authorization"]?.split(" ")[1];
+  if (!accessToken) {
     return response.status(401).json({ message: "Unauthorized" });
   }
 
-  jwt.verify(token, <string>process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+  verifyAccessToken(accessToken, (err, user) => {
     if (err) {
       return response.status(401).json({ message: "Unauthorized" });
     }
